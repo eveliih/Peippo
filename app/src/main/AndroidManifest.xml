@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Peippo">
         <activity
+            android:name=".ActivityFeedbackBeforeSleep"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitySeeTips"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityAddDataAfterSleep"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityAddDataBeforeSleep"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
