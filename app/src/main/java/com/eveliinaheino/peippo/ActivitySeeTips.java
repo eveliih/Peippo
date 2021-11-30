@@ -1,6 +1,7 @@
 package com.eveliinaheino.peippo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.collection.CircularArray;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActivitySeeTips extends AppCompatActivity {
-    private List<String> tips = new ArrayList<>();
+    private static List<String> titles = new ArrayList<>();
     private ArrayAdapter<String> tipsAdapter;
     public static final String EXTRATIPS = "com.eveliinaheino.peippo.EXTRATIPS";
 
@@ -22,18 +23,18 @@ public class ActivitySeeTips extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_tips);
 
-        tips.add("Elämäntavat");
-        tips.add("Nukkumisympäristö");
-        tips.add("Sängyssä olo");
-        tips.add("Rentoutus");
-        tips.add("Tietoinen läsnäolo");
-        tips.add("Kognitiiviset menetelmät");
+        titles.add("Elämäntavat");
+        titles.add("Nukkumisympäristö");
+        titles.add("Vuoteessa olo");
+        titles.add("Rentoutus");
+        titles.add("Tietoinen läsnäolo");
+        titles.add("Kognitiiviset menetelmät");
 
         final ListView lv = findViewById(R.id.tipsListView);
         this.tipsAdapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
-                tips);
+                titles);
         lv.setAdapter(this.tipsAdapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -44,5 +45,9 @@ public class ActivitySeeTips extends AppCompatActivity {
                 startActivity(tipActivity);
             }
         });
+    }
+
+    public static String getTipTitle(int i){
+        return titles.get(i);
     }
 }

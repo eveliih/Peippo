@@ -16,7 +16,7 @@ public class ActivityTipDetails extends AppCompatActivity {
         int i = b.getInt(ActivitySeeTips.EXTRATIPS, 0);
 
         ((TextView)findViewById(R.id.textViewTitle))
-                .setText("Otsikko");
+                .setText(ActivitySeeTips.getTipTitle(i));
         ((TextView)findViewById(R.id.textViewTip))
                 .setText(TipText.getTipText(i));
     }
