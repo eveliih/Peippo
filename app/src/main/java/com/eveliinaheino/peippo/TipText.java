@@ -5,7 +5,7 @@ public class TipText {
     public TipText() {
     }
 
-    public static String getText(int i){
+    public static String getTipText(int i){
         if (i == 0) {
             return "moi";
         } else if (i == 1) {
@@ -17,7 +17,7 @@ public class TipText {
         } else if (i == 4){
             return "hey";
         } else {
-            return "ey";
+            return "heyo";
         }
     }
 }

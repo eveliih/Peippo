@@ -15,7 +15,7 @@ import java.util.List;
 public class ActivitySeeTips extends AppCompatActivity {
     private List<String> tips = new ArrayList<>();
     private ArrayAdapter<String> tipsAdapter;
-    public static final String EXTRA = "com.eveliinaheino.peippo.EXTRA";
+    public static final String EXTRATIPS = "com.eveliinaheino.peippo.EXTRATIPS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +39,9 @@ public class ActivitySeeTips extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent nextActivity = new Intent(ActivitySeeTips.this, ActivityTipDetails.class);
-                nextActivity.putExtra(EXTRA, i);
-                startActivity(nextActivity);
+                Intent tipActivity = new Intent(ActivitySeeTips.this, ActivityTipDetails.class);
+                tipActivity.putExtra(EXTRATIPS, i);
+                startActivity(tipActivity);
             }
         });
     }
