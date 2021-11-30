@@ -8,7 +8,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ActivityFeedbackBeforeSleep extends AppCompatActivity {
-    ArrayList <TirednessAndMood> list;
+    ArrayList <PeippoVariables> list;
+    int mood;
+    int tiredness;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,10 +21,13 @@ public class ActivityFeedbackBeforeSleep extends AppCompatActivity {
         TextView textViewTiredness = findViewById(R.id.textViewTirednessFeedback);
 
         list = SingletonMoodsAndTiredness.getInstance().getList();
-        int mood = list.get(list.size() -1).getMood();
-        int tiredness = list.get(list.size() - 1).getTiredness();
 
-        textViewMood.setText(Integer.toString(mood));
-        textViewTiredness.setText(Integer.toString(tiredness));
+        mood = list.get(list.size() - 1).getMood();
+        tiredness = list.get(list.size() - 1).getTiredness();
+
+        GetFeedbackMessage messages = new GetFeedbackMessage(mood,tiredness);
+        textViewMood.setText(messages.getMoodMessage());
+        textViewTiredness.setText(messages.getTirednessMessage());
+
     }
 }

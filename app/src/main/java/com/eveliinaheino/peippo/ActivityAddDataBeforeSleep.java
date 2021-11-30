@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 public class ActivityAddDataBeforeSleep extends AppCompatActivity {
     private RadioGroup radioGroupTiredness;
@@ -76,7 +75,7 @@ public class ActivityAddDataBeforeSleep extends AppCompatActivity {
 }
 
     public void buttonSavedClicked(View view){
-        SingletonMoodsAndTiredness.getInstance().getList().add(new TirednessAndMood(tiredness, mood));
+        SingletonMoodsAndTiredness.getInstance().getList().add(new PeippoVariables(0, tiredness, mood));
         Intent intent = new Intent(this, ActivityFeedbackBeforeSleep.class);
         startActivity(intent);
     }
