@@ -19,7 +19,7 @@
             android:name=".ActivityFeedbackBeforeSleep"
             android:exported="false" />
         <activity
-            android:name=".ActivitySeeTips"
+            android:name=".ActivityTipList"
             android:exported="false" />
         <activity
             android:name=".ActivityAddDataAfterSleep"

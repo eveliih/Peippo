@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void buttonSeeTipsClicked(View view){
-        Intent intent = new Intent(this, ActivitySeeTips.class);
+        Intent intent = new Intent(this, ActivityTipList.class);
         startActivity(intent);
     }
 }
