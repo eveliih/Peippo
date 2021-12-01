@@ -28,6 +28,9 @@
             android:name=".ActivityAddDataBeforeSleep"
             android:exported="false" />
         <activity
+            android:name=".ActivitySeeData"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
