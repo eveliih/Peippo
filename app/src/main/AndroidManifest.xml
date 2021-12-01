@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Peippo">
         <activity
-            android:name=".ActivitySeeData"
+            android:name=".ActivityTipDetails"
             android:exported="false" />
         <activity
             android:name=".ActivityFeedbackAfterSleep"
