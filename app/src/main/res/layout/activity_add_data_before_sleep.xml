@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityAddDataBeforeSleep">
+
+    <TextView
+        android:id="@+id/textViewTiredness"
+        android:layout_width="328dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="76dp"
+        android:gravity="center"
+        android:text="Kuinka väsynyt olet? \n(1 erittäin väsynyt - 5 en ole lainkaan väsynyt)"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewMood"
+        android:layout_width="324dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="104dp"
+        android:gravity="center"
+        android:text="Minkälainen mielialasi on? \n(1 huono - 5 erinomainen)"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupTiredness" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="tirednessRadioButtonClicked"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupTiredness"
+        android:layout_width="361dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="26dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTiredness">
+
+        <RadioButton
+            android:id="@+id/radioButtonTiredness1"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="tirednessRadioButtonClicked"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonTiredness2"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="tirednessRadioButtonClicked"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/radioButtonTiredness3"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="tirednessRadioButtonClicked"
+            android:text="3" />
+
+        <RadioButton
+            android:id="@+id/radioButtonTiredness4"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="tirednessRadioButtonClicked"
+            android:text="4" />
+
+        <RadioButton
+            android:id="@+id/radioButtonTiredness5"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="tirednessRadioButtonClicked"
+            android:text="5" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupMood"
+        android:layout_width="369dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMood">
+
+        <RadioButton
+            android:id="@+id/radioButtonMood1"
+            android:layout_width="340dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="moodRadioButtonClicked"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMood2"
+            android:layout_width="340dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:onClick="moodRadioButtonClicked"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMood3"
+            android:layout_width="340dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:onClick="moodRadioButtonClicked"
+            android:text="3" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMood4"
+            android:layout_width="340dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:onClick="moodRadioButtonClicked"
+            android:text="4" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMood5"
+            android:layout_width="340dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:onClick="moodRadioButtonClicked"
+            android:text="5" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="buttonSavedClicked"
+        android:text="Tallenna"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupMood"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
