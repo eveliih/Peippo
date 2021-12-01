@@ -1,10 +1,10 @@
 package com.eveliinaheino.peippo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void buttonSeeTipsClicked(View view){
         Intent intent = new Intent(this, ActivitySeeTips.class);
+        startActivity(intent);
+    }
+
+    public void buttonSeeData(View view){
+        Intent intent = new Intent(this, ActivitySeeData.class);
         startActivity(intent);
     }
 }

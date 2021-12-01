@@ -21,13 +21,13 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
 
-public class ChartActivity extends AppCompatActivity {
+public class ActivitySeeData extends AppCompatActivity {
     private CombinedChart peippoChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_see_data);
 
         peippoChart = findViewById(R.id.combinedChart);
         peippoChart.getDescription().setText("Viimeisten 7 päivän tiedot");
@@ -148,7 +148,7 @@ public class ChartActivity extends AppCompatActivity {
         set1.setValueTextSize(10f);
         set1.setAxisDependency(YAxis.AxisDependency.LEFT);
 
-        float barWidth = 0.90f; // x2 dataset
+        float barWidth = 0.8f; // x2 dataset
 
         BarData bardata = new BarData(set1);
         bardata.setBarWidth(barWidth);
@@ -156,10 +156,11 @@ public class ChartActivity extends AppCompatActivity {
         return bardata;
     }
 
+    /* Asettaa arvot pylväsdiagrammiin */
     private ArrayList<BarEntry> getBarEnteries(ArrayList<BarEntry> entries){
 
         /* Pylväsdiagrammin arvot */
-        float[] value = {7, 10, 8, 11, 6, 7, 8, 9, 6};
+        float[] value = {7, 10, 8, 11, 6, 7, 8, 9};
 
         for (int i = 1; i < value.length; i++) {
             entries.add(new BarEntry(i, value[i]));
