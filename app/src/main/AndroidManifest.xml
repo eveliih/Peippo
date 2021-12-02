@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Peippo">
         <activity
-            android:name=".ActivityTipDetails"
+            android:name=".ActivityTestiJson"
             android:exported="false" />
         <activity
             android:name=".ActivityFeedbackAfterSleep"
             android:exported="false" />
         <activity
             android:name=".ActivityFeedbackBeforeSleep"
-            android:exported="false" />
+            android:exported="false" /> <!-- android:theme="@style/Theme.AppCompat.PopUp"> -->
         <activity
             android:name=".ActivitySeeTips"
             android:exported="false" />
@@ -26,9 +26,6 @@
             android:exported="false" />
         <activity
             android:name=".ActivityAddDataBeforeSleep"
-            android:exported="false" />
-        <activity
-            android:name=".ActivitySeeData"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

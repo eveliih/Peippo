@@ -2,11 +2,20 @@ package com.eveliinaheino.peippo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
 
 public class ActivityAddDataBeforeSleep extends AppCompatActivity {
     private RadioGroup radioGroupTiredness;
@@ -18,6 +27,7 @@ public class ActivityAddDataBeforeSleep extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_data_before_sleep);
+
     }
 
     public void moodRadioButtonClicked(View view) {
@@ -74,9 +84,32 @@ public class ActivityAddDataBeforeSleep extends AppCompatActivity {
     }
 }
 
-    public void buttonSavedClicked(View view){
-        SingletonMoodsAndTiredness.getInstance().getList().add(new PeippoVariables(0, tiredness, mood));
-        Intent intent = new Intent(this, ActivityFeedbackBeforeSleep.class);
-        startActivity(intent);
+    public void buttonSavedClicked(View view) {
+
+        if (tiredness != 0 && mood != 0) {      //jos molempiin radiobuttoneihin on tehty valinta niin tallennetaan arvot listalle&shared prefrensseihin ja aloitetaan uusi aktiviteetti
+            SingletonMoodsAndTiredness.getInstance().getList().add(new PeippoVariables(0, tiredness, mood));
+            Intent intent = new Intent(this, ActivityFeedbackBeforeSleep.class);
+
+            Gson gson = new Gson();
+            ArrayList<PeippoVariables> list = SingletonMoodsAndTiredness.getInstance().getList();
+
+            String jsonPeippoVariables = gson.toJson(list);
+
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor prefEditor = sharedPreferences.edit();
+
+            prefEditor.putString("jsonPeippoVariables", jsonPeippoVariables);
+
+            prefEditor.commit();
+
+            startActivity(intent);
+        } else {      //jos molempiin radiobuttoneihin ei ole tehty valintaa niin käyttäjälle näytetään viesti, jossa kehotetaan tallentamaan tiedot
+            Context context = getApplicationContext();
+            CharSequence text = "Täytä kaikki kohdat ennen tallentamista!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
     }
 }
