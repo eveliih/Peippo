@@ -1,7 +1,9 @@
 package com.eveliinaheino.peippo;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,16 +20,43 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActivitySeeData extends AppCompatActivity {
     private CombinedChart peippoChart;
+    String json;
+    ArrayList<PeippoVariables> variables;
+    ArrayList<Entry> lineOne = new ArrayList<>();
+    ArrayList<Entry> lineTwo = new ArrayList<>();
+    ArrayList<BarEntry> entries = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_data);
+
+        SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
+        json = prefGet.getString("jsonPeippoVariables", " ");
+
+        Gson gson = new Gson();
+        TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {};
+        List<PeippoVariables> peippoList = gson.fromJson(json, token.getType());
+
+        for(int i = 0; i < peippoList.size(); i++){
+            lineOne.add(new Entry(i+1, peippoList.get(i).getMood()));}
+
+
+        for(int i = 0; i < peippoList.size(); i++){
+            lineTwo.add(new Entry(i+1, peippoList.get(i).getTiredness()));}
+
+        for(int i = 0; i < peippoList.size(); i++){
+            entries.add(new BarEntry(i+1, peippoList.get(i).getSleptHours()));}
+
+
 
         peippoChart = findViewById(R.id.combinedChart);
         peippoChart.getDescription().setText("Viimeisten 7 päivän tiedot");
@@ -85,23 +114,14 @@ public class ActivitySeeData extends AppCompatActivity {
     };
 
 
+
     /* Tuottaa datan viivadiagrammeihin */
     private LineData generateLineData(){
 
-        /* Tähän asetetaan viivadiagrammien arvot */
-        float[] valOne = {2, 3, 5, 2, 5, 4, 1, 3, 6};
-        float[] valTwo = {5, 2, 3, 1, 3, 2, 5, 3, 6};
 
-        ArrayList<Entry> lineOne = new ArrayList<>();
-        ArrayList<Entry> lineTwo = new ArrayList<>();
-        for (int i = 1; i < valOne.length; i++) {
-            lineOne.add(new Entry(i, valOne[i]));
-            lineTwo.add(new Entry(i, valTwo[i]));
-        }
-
-        LineDataSet set1 = new LineDataSet(lineOne, "Virkeys (1-5)");
+        LineDataSet set1 = new LineDataSet(lineOne, "Mieliala (1-5)");
         set1.setColor(Color.rgb(60, 220, 100));
-        LineDataSet set2 = new LineDataSet(lineTwo, "Mieliala (1-5)");
+        LineDataSet set2 = new LineDataSet(lineTwo, "Virkeys (1-5)");
         set2.setColor(Color.rgb(220, 100, 60));
 
         set1.setLineWidth(2f);
@@ -138,8 +158,6 @@ public class ActivitySeeData extends AppCompatActivity {
 
     private BarData generateBarData() {
 
-        ArrayList<BarEntry> entries = new ArrayList<BarEntry>();
-        entries = getBarEnteries(entries);
 
         BarDataSet set1 = new BarDataSet(entries, "Uni (tuntia)");
         set1.setColor(Color.rgb(60, 100, 220));
@@ -148,7 +166,7 @@ public class ActivitySeeData extends AppCompatActivity {
         set1.setValueTextSize(10f);
         set1.setAxisDependency(YAxis.AxisDependency.LEFT);
 
-        float barWidth = 0.8f; // x2 dataset
+        float barWidth = 0.45f; // x2 dataset
 
         BarData bardata = new BarData(set1);
         bardata.setBarWidth(barWidth);
@@ -156,15 +174,4 @@ public class ActivitySeeData extends AppCompatActivity {
         return bardata;
     }
 
-    /* Asettaa arvot pylväsdiagrammiin */
-    private ArrayList<BarEntry> getBarEnteries(ArrayList<BarEntry> entries){
-
-        /* Pylväsdiagrammin arvot */
-        float[] value = {7, 10, 8, 11, 6, 7, 8, 9};
-
-        for (int i = 1; i < value.length; i++) {
-            entries.add(new BarEntry(i, value[i]));
-        }
-        return  entries;
-    }
 }

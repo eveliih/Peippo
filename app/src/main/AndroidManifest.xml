@@ -27,6 +27,8 @@
         <activity
             android:name=".ActivityAddDataBeforeSleep"
             android:exported="false" />
+        <activity android:name=".ActivitySeeData"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
