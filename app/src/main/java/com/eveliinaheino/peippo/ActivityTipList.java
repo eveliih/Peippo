@@ -22,14 +22,6 @@ public class ActivityTipList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip_list);
 
-        titles.add("Elämäntavat");
-        titles.add("Nukkumisympäristö");
-        titles.add("Vuoteeseen meno");
-        titles.add("Rentoutus");
-        titles.add("Tietoinen läsnäolo");
-        titles.add("Kognitiiviset menetelmät");
-        titles.add("Liikaunisuus");
-
         final ListView lv = findViewById(R.id.tipsListView);
         this.tipsAdapter = new ArrayAdapter<>(
                 this,
@@ -45,6 +37,24 @@ public class ActivityTipList extends AppCompatActivity {
                 startActivity(tipActivity);
             }
         });
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        titles.add("Elämäntavat");
+        titles.add("Nukkumisympäristö");
+        titles.add("Vuoteeseen meno");
+        titles.add("Rentoutus");
+        titles.add("Tietoinen läsnäolo");
+        titles.add("Kognitiiviset menetelmät");
+        titles.add("Liikaunisuus");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        titles.clear();
     }
 
     public static String getTipTitle(int i){
