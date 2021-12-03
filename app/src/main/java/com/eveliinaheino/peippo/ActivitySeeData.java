@@ -105,7 +105,7 @@ public class ActivitySeeData extends AppCompatActivity {
         xAxis.setAxisMaximum(data.getXMax() + 0.25f);
         peippoChart.setData(data);
         peippoChart.invalidate();
-        peippoChart.animateXY(2000, 2000); /* Diagrammin auetessa näkyvä animaatio */
+      /*  peippoChart.animateXY(2000, 2000); /* Diagrammin auetessa näkyvä animaatio */
     }
 
     /* Tästä saa asetettua pylväiden alapuolelle tekstit, esim. viikonpäivät */
@@ -145,13 +145,11 @@ public class ActivitySeeData extends AppCompatActivity {
         set1.setHighlightEnabled(false);
         set2.setHighlightEnabled(false);
 
-        ArrayList<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(set1);
         dataSets.add(set2);
 
-        LineData linedata = new LineData(dataSets);
-
-        return linedata;
+        return new LineData(dataSets);
     }
 
     /* Tuottaa datan pylväsdiagrammiin */
