@@ -13,10 +13,10 @@ public class ActivityTipDetails extends AppCompatActivity {
         setContentView(R.layout.activity_tip_details);
 
         Bundle b = getIntent().getExtras();
-        int i = b.getInt(ActivitySeeTips.EXTRATIPS, 0);
+        int i = b.getInt(ActivityTipList.EXTRATIPS, 0);
 
         ((TextView)findViewById(R.id.textViewTitle))
-                .setText(ActivitySeeTips.getTipTitle(i));
+                .setText(ActivityTipList.getTipTitle(i));
         ((TextView)findViewById(R.id.textViewTip))
                 .setText(TipText.getTipText(i));
     }

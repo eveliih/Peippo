@@ -56,15 +56,12 @@ public class ActivitySeeData extends AppCompatActivity {
         for(int i = 0; i < peippoList.size(); i++){
             entries.add(new BarEntry(i+1, peippoList.get(i).getSleptHours()));}
 
-
-
         peippoChart = findViewById(R.id.combinedChart);
         peippoChart.getDescription().setText("Viimeisten 7 päivän tiedot");
         peippoChart.setBackgroundColor(Color.WHITE);
         peippoChart.setDrawGridBackground(true);
         peippoChart.setDrawBarShadow(true);
         peippoChart.setHighlightFullBarEnabled(true);
-
 
         /* Tällä saa viivat näkymään pylväiden päällä */
         peippoChart.setDrawOrder(new CombinedChart.DrawOrder[]{
