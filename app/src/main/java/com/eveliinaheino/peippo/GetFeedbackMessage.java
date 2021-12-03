@@ -37,8 +37,10 @@ public class GetFeedbackMessage {
     }
 
     public String getTirednessMessageMorning(){
-        if(this.tiredness == 1 || this.tiredness == 2){
-            return "Nukuit " + this.sleptHours + " tuntia ja arivoit olevasi väsynyt. Nukuitko mahdollisesti liikaa tai liian vähän? Ole yhteydessä terveydenhuollon ammattilaiseen, jos tunnet olosi jatkuvasti väsyneeksi riittävistä yöunista huolimatta. Tarkastele tietojasi osion avulla voit saada käsityksen montako tuntia sinun tulee nukkua tunteaksesi olosi virkeäksi.\n\n";
+        if(this.tiredness == 1){
+            return "Nukuit " + this.sleptHours + " tuntia ja arvioit olevasi väsynyt. Nukuitko mahdollisesti liikaa tai liian vähän? Ole yhteydessä terveydenhuollon ammattilaiseen, jos tunnet olosi jatkuvasti väsyneeksi riittävistä yöunista huolimatta. Tarkastele tietojasi osion avulla voit saada käsityksen montako tuntia sinun tulee nukkua tunteaksesi olosi virkeäksi.\n\n";
+        }else if(this.tiredness == 2){
+            return "Nukuit " + this.sleptHours + " tuntia ja arvioit olevasi väsynyt. Nukuitko mahdollisesti liikaa tai liian vähän? Ole yhteydessä terveydenhuollon ammattilaiseen, jos tunnet olosi jatkuvasti väsyneeksi riittävistä yöunista huolimatta. Tarkastele tietojasi osion avulla voit saada käsityksen montako tuntia sinun tulee nukkua tunteaksesi olosi virkeäksi.\n\n";
         }else if(this.tiredness == 3){
             return "Nukuit " + this.sleptHours + " tuntia ja arivoit vireystasosi olevan keskitasoa. Syö vielä hyvä aamiainen ja olet valmiina päivän koitoksiin!\n\n";
         }else if(this.tiredness == 4 || this.tiredness == 5){

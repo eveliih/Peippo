@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -18,8 +19,6 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 public class ActivityAddDataAfterSleep extends AppCompatActivity {
-    private RadioGroup radioGroupTiredness;
-    private RadioGroup radioGroupMood;
     int tiredness;
     int mood;
 
@@ -88,8 +87,17 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
 
         Intent intent = new Intent(this, ActivityFeedbackAfterSleep.class);
 
-        if(tiredness != 0 && mood !=0 && !(editTextSleptHours.getText().toString().isEmpty())){ //jos kaikki pyydetyty tiedot on annettu niin tallennetaan tiedot ja aloitetaan uusi aktiviteetti
+        if(tiredness != 0 && mood !=0 && !(editTextSleptHours.getText().toString().isEmpty()) && !(editTextSleptHours.getText().toString().equals("."))){ //jos kaikki pyydetyty tiedot on annettu niin tallennetaan tiedot ja aloitetaan uusi aktiviteetti
             int sleptHrs = Integer.parseInt(editTextSleptHours.getText().toString());
+            if(sleptHrs > 24){
+                Context context = getApplicationContext();
+                CharSequence text = "Nukuttujen tuntien maksimiarvo on 24 tuntia!";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+            else{
             SingletonMoodsAndTiredness.getInstance().getList().add(new PeippoVariables(1, tiredness, mood, sleptHrs));
 
             //halutaanko tallentaa tässä vai myöhemmin?
@@ -106,6 +114,14 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
             prefEditor.commit();
 
             startActivity(intent);
+            }
+        } else if(editTextSleptHours.getText().toString().equals(".")){
+            Context context = getApplicationContext();
+            CharSequence text = "Käytä pelkkiä numeroita!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
         else{ //jos valintaa ei ole tehty näytetään käyttäjälle viesti
             Context context = getApplicationContext();
