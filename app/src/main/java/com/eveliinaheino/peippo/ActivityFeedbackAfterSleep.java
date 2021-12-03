@@ -17,9 +17,7 @@ public class ActivityFeedbackAfterSleep extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback_after_sleep);
-        TextView textViewMood = findViewById(R.id.textViewMoodAfterSleep);
-        TextView textViewTiredness = findViewById(R.id.textViewTirednessAfterSleep);
-        TextView textViewSleptHours = findViewById(R.id.textViewSleptHours);
+        TextView textViewMood = findViewById(R.id.textViewMorningFeedback);
 
         list = SingletonMoodsAndTiredness.getInstance().getList();
         mood = list.get(list.size() - 1).getMood();
@@ -28,9 +26,7 @@ public class ActivityFeedbackAfterSleep extends AppCompatActivity {
 
         GetFeedbackMessage getFeedbackMessage = new GetFeedbackMessage(mood, tiredness, sleptHours);
 
-        textViewMood.setText(getFeedbackMessage.getMoodMessage());
-        textViewTiredness.setText(getFeedbackMessage.getTirednessMessage());
-        textViewSleptHours.setText(getFeedbackMessage.getSleepHrsMessage());
+        textViewMood.setText(getFeedbackMessage.getFeedbackMorning());
 
     }
 }
