@@ -68,8 +68,8 @@ public class TipText {
                     "syvä ja rauhallinen, ja jokaisen uloshengityksen jälkeen pidetään parin sekunnin tauko ennen " +
                     "seuraavaa sisäänhengitystä. Keho päästetään tietoisesti rentoutumaan hengittelyn aikana.\n" +
                     "\n" +
-                    "On olemassa monia tapoja rentoutua. Jos ylsi tapa tuntuu epämukavalta, kannattaa kuitenkin " +
-                    "antaa mahdollisuus toisellekin tekniikalle. Internetistä löytyy valtavasti erilaisia ohjattuja " +
+                    "On olemassa monia tapoja rentoutua. Jos yksi tapa tuntuu epämukavalta, kannattaa " +
+                    "antaa mahdollisuus toiselle tekniikalle. Internetistä löytyy valtavasti erilaisia ohjattuja " +
                     "harjoituksia ja äänitteitä.\n" +
                     "\n" +
                     "Lähde: Mielenterveystalo, Unettomuuden omahoito";
