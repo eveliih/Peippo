@@ -1,14 +1,13 @@
 package com.eveliinaheino.peippo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void buttonSeeDataClicked(View view){
-        Intent intent = new Intent(this, ActivityTestiJson.class);
+        Intent intent = new Intent(this, ActivitySeeData.class);
         startActivity(intent);
     }
 }
