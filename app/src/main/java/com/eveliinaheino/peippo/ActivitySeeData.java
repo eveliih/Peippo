@@ -47,7 +47,7 @@ public class ActivitySeeData extends AppCompatActivity {
 
     private void getSavedData() {
         ArrayList<PeippoVariables> peippoList = SingletonPeippoVariablesList.getInstance().getList();
-        int labelsSize = peippoList.size();
+        int labelsSize = peippoList.size() + 1;
         labels = new String[labelsSize];
         for (int i = 0; i < peippoList.size(); i++) {
             lineOne.add(new Entry(i + 1, peippoList.get(i).getMood()));
@@ -58,9 +58,10 @@ public class ActivitySeeData extends AppCompatActivity {
 
         labels[0] = " ";
 
-        for (int i = 1; i < peippoList.size(); i++) {
+        for (int i = 0; i < peippoList.size(); i++) {
             String date = peippoList.get(i).getDate();
-                labels[i] = date;
+            int a = i + 1;
+                labels[a] = date;
             }
         }
 
