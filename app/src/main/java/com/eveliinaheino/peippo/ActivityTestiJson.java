@@ -16,8 +16,10 @@ public class ActivityTestiJson extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.textViewJson);
         ArrayList<PeippoVariables> peippoList = SingletonPeippoVariablesList.getInstance().getList();
-
-        textView.setText("Viimeisin tallennettu mieliala: " + Integer.toString(peippoList.get(peippoList.size()-1).getMood())); //testinä haetaan listan viimeisestä oliosta mielialan arvo
-
+        if(peippoList.isEmpty()){
+            textView.setText("Tyhjä");
+        }else {
+            textView.setText("Viimeisin tallennettu mieliala: " + Integer.toString(peippoList.get(peippoList.size() - 1).getMood())); //testinä haetaan listan viimeisestä oliosta mielialan arvo
+        }
     }
 }

@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
         json = prefGet.getString("jsonPeippoVariables", " ");
 
-
         if(json.equals(" ")){
             dataArrayList = new ArrayList<>();
         }
