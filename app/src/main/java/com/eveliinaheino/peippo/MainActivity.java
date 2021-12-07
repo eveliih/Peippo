@@ -1,13 +1,11 @@
 package com.eveliinaheino.peippo;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -53,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void buttonSeeDataClicked(View view){
         Intent intent = new Intent(this, ActivityTestiJson.class);
+        startActivity(intent);
+    }
+    public void buttonManualClicked(View view){
+        Intent intent = new Intent(this, ActivityManual.class);
         startActivity(intent);
     }
 }
