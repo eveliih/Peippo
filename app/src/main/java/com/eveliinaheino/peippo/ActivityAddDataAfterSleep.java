@@ -1,7 +1,5 @@
 package com.eveliinaheino.peippo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,9 +11,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ActivityAddDataAfterSleep extends AppCompatActivity {
     int tiredness;
@@ -90,6 +91,10 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
 
         if(tiredness != 0 && mood !=0 && !(editTextSleptHours.getText().toString().isEmpty()) && !(editTextSleptHours.getText().toString().contains(".")) && !(editTextSleptHours.getText().toString().equals("-"))){ //jos kaikki pyydetyty tiedot on annettu niin tallennetaan tiedot ja aloitetaan uusi aktiviteetti
             int sleptHrs = Integer.parseInt(editTextSleptHours.getText().toString());
+            Calendar calendar = Calendar.getInstance();
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+            int month = calendar.get(Calendar.MONTH);
+            month++;
             if(sleptHrs > 24 || sleptHrs < 0){
                 Context context = getApplicationContext();
                 CharSequence text = "Nukutut tunnit 0 - 24 h!";
@@ -99,7 +104,7 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
                 toast.show();
             }
             else{
-            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables(1, tiredness, mood, sleptHrs));
+            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables(1, tiredness, mood, sleptHrs, day, month));
 
             //halutaanko tallentaa tässä vai myöhemmin?
             Gson gson = new Gson();

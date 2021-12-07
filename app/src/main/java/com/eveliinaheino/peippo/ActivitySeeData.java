@@ -33,9 +33,8 @@ public class ActivitySeeData extends AppCompatActivity {
     private ArrayList<Entry> lineOne = new ArrayList<>();
     private ArrayList<Entry> lineTwo = new ArrayList<>();
     private ArrayList<BarEntry> entries = new ArrayList<>();
-    private String[] labels = new String[] {
-            " ", " ", " ", " ", "  ", " "
-    };
+    private String [] labels;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,21 +46,24 @@ public class ActivitySeeData extends AppCompatActivity {
     }
 
     private void getSavedData() {
-        ArrayList<PeippoVariables> peippoList =  SingletonPeippoVariablesList.getInstance().getList();
+        ArrayList<PeippoVariables> peippoList = SingletonPeippoVariablesList.getInstance().getList();
+        int labelsSize = peippoList.size();
+        labels = new String[labelsSize];
+        for (int i = 0; i < peippoList.size(); i++) {
+            lineOne.add(new Entry(i + 1, peippoList.get(i).getMood()));
+            lineTwo.add(new Entry(i + 1, peippoList.get(i).getTiredness()));
+            entries.add(new BarEntry(i + 1, peippoList.get(i).getSleptHours()));
+        }
 
-            for (int i = 0; i < peippoList.size(); i++) {
 
-                lineOne.add(new Entry(i + 1, peippoList.get(i).getMood()));
-            }
+        labels[0] = " ";
 
-            for (int i = 0; i < peippoList.size(); i++) {
-                lineTwo.add(new Entry(i + 1, peippoList.get(i).getTiredness()));
-            }
-
-            for (int i = 0; i < peippoList.size(); i++) {
-                entries.add(new BarEntry(i + 1, peippoList.get(i).getSleptHours()));
+        for (int i = 1; i < peippoList.size(); i++) {
+            String date = peippoList.get(i).getDate();
+                labels[i] = date;
             }
         }
+
 
 
         private void showCombinedChart() {
@@ -112,7 +114,7 @@ public class ActivitySeeData extends AppCompatActivity {
             leftAxis.setAxisMaximum(15);
 
             XAxis xAxis = peippoChart.getXAxis();
-            xAxis.setPosition(XAxis.XAxisPosition.BOTH_SIDED);
+            xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
             xAxis.setAxisMinimum(0f);
             xAxis.setGranularity(1f);
             xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
@@ -160,6 +162,7 @@ public class ActivitySeeData extends AppCompatActivity {
     /* Tuottaa datan pylväsdiagrammiin */
     private BarData generateBarData() {
         BarDataSet set1 = new BarDataSet(entries, "Uni (tuntia)");
+        set1.setDrawValues(false);
 
         set1.setColor(Color.rgb(60, 100, 220));
         set1.setValueTextColor(Color.BLACK);
