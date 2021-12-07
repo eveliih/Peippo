@@ -19,7 +19,7 @@ public class ActivityFeedbackAfterSleep extends AppCompatActivity {
         setContentView(R.layout.activity_feedback_after_sleep);
         TextView textViewMood = findViewById(R.id.textViewMorningFeedback);
 
-        list = SingletonMoodsAndTiredness.getInstance().getList();
+        list = SingletonPeippoVariablesList.getInstance().getList();
         mood = list.get(list.size() - 1).getMood();
         tiredness = list.get(list.size() - 1).getTiredness();
         sleptHours = list.get(list.size() - 1).getSleptHours();

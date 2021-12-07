@@ -34,7 +34,7 @@ public class ActivityFeedbackBeforeSleep extends Activity{
 
         TextView textViewEveningFeedback = findViewById(R.id.textViewEveningFeedback);
 
-        list = SingletonMoodsAndTiredness.getInstance().getList();
+        list = SingletonPeippoVariablesList.getInstance().getList();
 
         mood = list.get(list.size() - 1).getMood();
         tiredness = list.get(list.size() - 1).getTiredness();
@@ -47,7 +47,7 @@ public class ActivityFeedbackBeforeSleep extends Activity{
 
     @Override
     protected void onStop() {
-        list = SingletonMoodsAndTiredness.getInstance().getList();
+        list = SingletonPeippoVariablesList.getInstance().getList();
         super.onStop();
         //halutaanko tallentaa tiedot vasta tässä kohtaa? Nyt tallennus tapahtuu samalla, kun käyttäjä klikkaa Tallenna nappulaa ActivityAddDataBeforeSleep
         /* Gson gson = new Gson();

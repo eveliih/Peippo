@@ -2,20 +2,42 @@ package com.eveliinaheino.peippo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+    String json;
+    ArrayList<PeippoVariables> dataArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
+        json = prefGet.getString("jsonPeippoVariables", " ");
+
+        Gson gson = new Gson();
+        TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {};
+        List<PeippoVariables> dataList = gson.fromJson(json, token.getType());
+
+        if(dataList.isEmpty()){
+            dataArrayList = new ArrayList<>(dataList.size());
+        }
+        else{
+            dataArrayList = new ArrayList<>(dataList.size());
+            dataArrayList.addAll(dataList);
+        }
+
+        SingletonPeippoVariablesList.getInstance().setArrayListToSingleton(dataArrayList);
 
     }
     public void buttonAddAfterSleepClicked(View view){
@@ -23,11 +45,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void buttonAddBeforeSleepClicked(View view){
-        SharedPreferences prefGet = getPreferences(Context.MODE_PRIVATE);
-        String testi = prefGet.getString("Peippo", "oli tyhjä");
-
-        Log.d("testi", testi);
-
         Intent intent = new Intent(this, ActivityAddDataBeforeSleep.class);
         startActivity(intent);
     }

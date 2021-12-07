@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -86,23 +85,25 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
         EditText editTextSleptHours = findViewById(R.id.editTextSleepHours);
 
         Intent intent = new Intent(this, ActivityFeedbackAfterSleep.class);
+        String log = editTextSleptHours.getText().toString();
+        Log.d("piste", log);
 
-        if(tiredness != 0 && mood !=0 && !(editTextSleptHours.getText().toString().isEmpty()) && !(editTextSleptHours.getText().toString().equals("."))){ //jos kaikki pyydetyty tiedot on annettu niin tallennetaan tiedot ja aloitetaan uusi aktiviteetti
+        if(tiredness != 0 && mood !=0 && !(editTextSleptHours.getText().toString().isEmpty()) && !(editTextSleptHours.getText().toString().contains(".")) && !(editTextSleptHours.getText().toString().equals("-"))){ //jos kaikki pyydetyty tiedot on annettu niin tallennetaan tiedot ja aloitetaan uusi aktiviteetti
             int sleptHrs = Integer.parseInt(editTextSleptHours.getText().toString());
-            if(sleptHrs > 24){
+            if(sleptHrs > 24 || sleptHrs < 0){
                 Context context = getApplicationContext();
-                CharSequence text = "Nukuttujen tuntien maksimiarvo on 24 tuntia!";
+                CharSequence text = "Nukutut tunnit 0 - 24 h!";
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
             }
             else{
-            SingletonMoodsAndTiredness.getInstance().getList().add(new PeippoVariables(1, tiredness, mood, sleptHrs));
+            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables(1, tiredness, mood, sleptHrs));
 
             //halutaanko tallentaa tässä vai myöhemmin?
             Gson gson = new Gson();
-            ArrayList<PeippoVariables> list = SingletonMoodsAndTiredness.getInstance().getList();
+            ArrayList<PeippoVariables> list = SingletonPeippoVariablesList.getInstance().getList();
 
             String jsonPeippoVariables = gson.toJson(list);
 
@@ -115,7 +116,7 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
 
             startActivity(intent);
             }
-        } else if(editTextSleptHours.getText().toString().equals(".")){
+        } else if(editTextSleptHours.getText().toString().contains(".") || editTextSleptHours.getText().toString().contains("-")){
             Context context = getApplicationContext();
             CharSequence text = "Käytä pelkkiä numeroita!";
             int duration = Toast.LENGTH_SHORT;
