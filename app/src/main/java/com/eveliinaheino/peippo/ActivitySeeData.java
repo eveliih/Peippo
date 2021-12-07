@@ -1,9 +1,7 @@
 package com.eveliinaheino.peippo;
 
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,11 +18,8 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Luokka tuottaa diagrammin käyttäjän syöttämistä tiedoista
@@ -52,15 +47,10 @@ public class ActivitySeeData extends AppCompatActivity {
     }
 
     private void getSavedData() {
-        SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
-        json = prefGet.getString("jsonPeippoVariables", " ");
-
-        Gson gson = new Gson();
-        TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {
-        };
-        List<PeippoVariables> peippoList = gson.fromJson(json, token.getType());
+        ArrayList<PeippoVariables> peippoList =  SingletonPeippoVariablesList.getInstance().getList();
 
             for (int i = 0; i < peippoList.size(); i++) {
+
                 lineOne.add(new Entry(i + 1, peippoList.get(i).getMood()));
             }
 
