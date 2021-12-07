@@ -9,6 +9,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,11 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    public void buttonAddAfterSleepClicked(View view){
+
+    public void buttonAddAfterSleepClicked(View view) {
         Intent intent = new Intent(this, ActivityAddDataAfterSleep.class);
         startActivity(intent);
     }
-    public void buttonAddBeforeSleepClicked(View view){
+
+    public void buttonAddBeforeSleepClicked(View view) {
         SharedPreferences prefGet = getPreferences(Context.MODE_PRIVATE);
         String testi = prefGet.getString("Peippo", "oli tyhjä");
 
@@ -30,12 +34,22 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityAddDataBeforeSleep.class);
         startActivity(intent);
     }
-    public void buttonSeeTipsClicked(View view){
+
+    public void buttonSeeTipsClicked(View view) {
         Intent intent = new Intent(this, ActivityTipList.class);
         startActivity(intent);
     }
+
     public void buttonSeeDataClicked(View view) {
+        File file = new File(
+                "/data/data/com.eveliinaheino.peippo/shared_prefs/com.eveliinaheino.peippo_preferences.xml");
+        if (file.exists()){
             Intent intent = new Intent(this, ActivitySeeData.class);
+            startActivity(intent);}
+        else {
+            Intent intent = new Intent(this, ActivityNoDataSaved.class);
             startActivity(intent);
+        }
+
     }
 }

@@ -26,6 +26,11 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Luokka tuottaa diagrammin käyttäjän syöttämistä tiedoista
+ * @author hanne
+ */
+
 public class ActivitySeeData extends AppCompatActivity {
     private CombinedChart peippoChart;
     private String json;
@@ -44,17 +49,16 @@ public class ActivitySeeData extends AppCompatActivity {
         getSavedData();
         initCombinedChart();
         showCombinedChart();
-
     }
 
     private void getSavedData() {
-            SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
-            json = prefGet.getString("jsonPeippoVariables", " ");
+        SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
+        json = prefGet.getString("jsonPeippoVariables", " ");
 
-            Gson gson = new Gson();
-            TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {
-            };
-            List<PeippoVariables> peippoList = gson.fromJson(json, token.getType());
+        Gson gson = new Gson();
+        TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {
+        };
+        List<PeippoVariables> peippoList = gson.fromJson(json, token.getType());
 
             for (int i = 0; i < peippoList.size(); i++) {
                 lineOne.add(new Entry(i + 1, peippoList.get(i).getMood()));
@@ -69,6 +73,7 @@ public class ActivitySeeData extends AppCompatActivity {
             }
         }
 
+
         private void showCombinedChart() {
             CombinedData data = new CombinedData();
 
@@ -79,7 +84,6 @@ public class ActivitySeeData extends AppCompatActivity {
             xAxis.setAxisMaximum(data.getXMax() + 0.40f);
             peippoChart.setData(data);
             peippoChart.invalidate();
-
         }
 
         private void initCombinedChart() {
