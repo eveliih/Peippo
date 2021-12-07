@@ -9,11 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityTipList extends AppCompatActivity {
-    private static List<String> titles = new ArrayList<>();
+    private List<String> titles = SingletonTips.getInstance().getTitles();
     private ArrayAdapter<String> tipsAdapter;
     public static final String EXTRATIPS = "com.eveliinaheino.peippo.EXTRATIPS";
 
@@ -37,27 +36,5 @@ public class ActivityTipList extends AppCompatActivity {
                 startActivity(tipActivity);
             }
         });
-    }
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        titles.add("Elämäntavat");
-        titles.add("Nukkumisympäristö");
-        titles.add("Vuoteeseen meno");
-        titles.add("Rentoutus");
-        titles.add("Tietoinen läsnäolo");
-        titles.add("Kognitiiviset menetelmät");
-        titles.add("Liikaunisuus");
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        titles.clear();
-    }
-
-    public static String getTipTitle(int i){
-        return titles.get(i);
     }
 }
