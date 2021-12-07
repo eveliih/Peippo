@@ -1,55 +1,59 @@
 package com.eveliinaheino.peippo;
 
-import android.content.Context;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import android.preference.PreferenceManager;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    String json;
+    ArrayList<PeippoVariables> dataArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    }
+        SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
+        json = prefGet.getString("jsonPeippoVariables", " ");
 
-    public void buttonAddAfterSleepClicked(View view) {
+        Gson gson = new Gson();
+        TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {};
+        List<PeippoVariables> dataList = gson.fromJson(json, token.getType());
+
+        if(dataList.isEmpty()){
+            dataArrayList = new ArrayList<>(dataList.size());
+        }
+        else{
+            dataArrayList = new ArrayList<>(dataList.size());
+            dataArrayList.addAll(dataList);
+        }
+
+        SingletonPeippoVariablesList.getInstance().setArrayListToSingleton(dataArrayList);
+
+    }
+    public void buttonAddAfterSleepClicked(View view){
         Intent intent = new Intent(this, ActivityAddDataAfterSleep.class);
         startActivity(intent);
     }
-
-    public void buttonAddBeforeSleepClicked(View view) {
-        SharedPreferences prefGet = getPreferences(Context.MODE_PRIVATE);
-        String testi = prefGet.getString("Peippo", "oli tyhjä");
-
-        Log.d("testi", testi);
-
+    public void buttonAddBeforeSleepClicked(View view){
         Intent intent = new Intent(this, ActivityAddDataBeforeSleep.class);
         startActivity(intent);
     }
-
-    public void buttonSeeTipsClicked(View view) {
-        Intent intent = new Intent(this, ActivityTipList.class);
+    public void buttonSeeTipsClicked(View view){
+        Intent intent = new Intent(this, ActivitySeeTips.class);
         startActivity(intent);
     }
-
-    public void buttonSeeDataClicked(View view) {
-        File file = new File(
-                "/data/data/com.eveliinaheino.peippo/shared_prefs/com.eveliinaheino.peippo_preferences.xml");
-        if (file.exists()){
-            Intent intent = new Intent(this, ActivitySeeData.class);
-            startActivity(intent);}
-        else {
-            Intent intent = new Intent(this, ActivityNoDataSaved.class);
-            startActivity(intent);
-        }
-
+    public void buttonSeeDataClicked(View view){
+        Intent intent = new Intent(this, ActivityTestiJson.class);
+        startActivity(intent);
     }
 }

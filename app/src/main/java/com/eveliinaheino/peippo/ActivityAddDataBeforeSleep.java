@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -87,11 +86,11 @@ public class ActivityAddDataBeforeSleep extends AppCompatActivity {
     public void buttonSavedClicked(View view) {
 
         if (tiredness != 0 && mood != 0) {      //jos molempiin radiobuttoneihin on tehty valinta niin tallennetaan arvot listalle&shared prefrensseihin ja aloitetaan uusi aktiviteetti
-            SingletonMoodsAndTiredness.getInstance().getList().add(new PeippoVariables(0, tiredness, mood));
+            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables(0, tiredness, mood));
             Intent intent = new Intent(this, ActivityFeedbackBeforeSleep.class);
 
             Gson gson = new Gson();
-            ArrayList<PeippoVariables> list = SingletonMoodsAndTiredness.getInstance().getList();
+            ArrayList<PeippoVariables> list = SingletonPeippoVariablesList.getInstance().getList();
 
             String jsonPeippoVariables = gson.toJson(list);
 
