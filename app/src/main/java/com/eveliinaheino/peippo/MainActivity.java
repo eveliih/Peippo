@@ -25,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
         json = prefGet.getString("jsonPeippoVariables", " ");
 
-        Gson gson = new Gson();
-        TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {};
-        List<PeippoVariables> dataList = gson.fromJson(json, token.getType());
 
-        if(dataList.isEmpty()){
-            dataArrayList = new ArrayList<>(dataList.size());
+        if(json.equals(" ")){
+            dataArrayList = new ArrayList<>();
         }
         else{
+            Gson gson = new Gson();
+            TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {};
+            List<PeippoVariables> dataList = gson.fromJson(json, token.getType());
             dataArrayList = new ArrayList<>(dataList.size());
             dataArrayList.addAll(dataList);
         }
