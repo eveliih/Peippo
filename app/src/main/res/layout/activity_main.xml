@@ -8,11 +8,14 @@
 
     <Button
         android:id="@+id/buttonAddBeforeSleep"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="50dp"
         android:onClick="buttonAddBeforeSleepClicked"
         android:text="Lisää tietoja ennen nukkumista"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddAfterSleep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,11 +23,14 @@
 
     <Button
         android:id="@+id/buttonAddAfterSleep"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
+        android:layout_marginEnd="50dp"
         android:onClick="buttonAddAfterSleepClicked"
         android:text="Lisää tietoja heräämisen jälkeen"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSeeData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,33 +38,39 @@
 
     <Button
         android:id="@+id/buttonSeeData"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
+        android:layout_marginEnd="50dp"
         android:onClick="buttonSeeDataClicked"
         android:text="Tarkastele tietojasi"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTips"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAddAfterSleep" />
 
     <Button
         android:id="@+id/buttonTips"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="100dp"
         android:onClick="buttonSeeTipsClicked"
         android:text="Vinkkejä parempaan uneen"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSeeData" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
-        app:layout_constraintGuide_percent="0.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <Button
         android:id="@+id/buttonManual"
