@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Peippo">
         <activity
-            android:name=".ActivityTestiJson"
-            android:exported="false" />
-        <activity
             android:name=".ActivityTipDetails"
             android:exported="false" />
         <activity
