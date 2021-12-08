@@ -99,14 +99,14 @@ public class ActivitySeeData extends AppCompatActivity {
             YAxis rightAxis = peippoChart.getAxisRight();
             rightAxis.setDrawGridLines(false);
             rightAxis.setAxisMinimum(0f);
-            rightAxis.setLabelCount(15, true);
-            rightAxis.setAxisMaximum(15);
+            rightAxis.setLabelCount(16);
+            rightAxis.setAxisMaximum(16);
 
             YAxis leftAxis = peippoChart.getAxisLeft();
             leftAxis.setDrawGridLines(false);
             leftAxis.setAxisMinimum(0f);
-            leftAxis.setLabelCount(15, true);
-            leftAxis.setAxisMaximum(15);
+            leftAxis.setLabelCount(16);
+            leftAxis.setAxisMaximum(16);
 
             XAxis xAxis = peippoChart.getXAxis();
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
