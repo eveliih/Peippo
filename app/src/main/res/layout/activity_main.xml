@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTintMode="src_atop"
     tools:context=".MainActivity">
 
     <Button
@@ -13,11 +14,12 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="#B8594D"
         android:onClick="buttonAddBeforeSleepClicked"
         android:text="Lisää tietoja ennen nukkumista"
         app:layout_constraintBottom_toTopOf="@+id/buttonAddAfterSleep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,8 +28,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="#B8594D"
         android:onClick="buttonAddAfterSleepClicked"
         android:text="Lisää tietoja heräämisen jälkeen"
         app:layout_constraintBottom_toTopOf="@+id/buttonSeeData"
@@ -41,8 +44,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="#B8594D"
         android:onClick="buttonSeeDataClicked"
         android:text="Tarkastele tietojasi"
         app:layout_constraintBottom_toTopOf="@+id/buttonTips"
@@ -54,7 +58,8 @@
         android:id="@+id/buttonTips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#B8594D"
         android:onClick="buttonSeeTipsClicked"
         android:text="Vinkkejä parempaan uneen"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,11 +68,11 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
-        app:layout_constraintGuide_percent="0.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.5" />
 
     <Button
         android:id="@+id/buttonManual"
@@ -82,4 +87,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="11dp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonManual"
+        app:layout_constraintTop_toTopOf="@+id/buttonAddAfterSleep"
+        app:srcCompat="@drawable/pngtreebird_cartoon_character_on_white_4048164" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="302dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddBeforeSleep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

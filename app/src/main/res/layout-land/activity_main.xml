@@ -10,57 +10,55 @@
         android:id="@+id/buttonAddBeforeSleep"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="35dp"
+        android:backgroundTint="#B8594D"
         android:onClick="buttonAddBeforeSleepClicked"
         android:text="Lisää tietoja ennen nukkumista"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSeeData"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddAfterSleep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonAddAfterSleep"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#B8594D"
         android:onClick="buttonAddAfterSleepClicked"
         android:text="Lisää tietoja heräämisen jälkeen"
-        app:layout_constraintBottom_toTopOf="@+id/buttonTips"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonSeeData"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAddBeforeSleep"
+        app:layout_constraintStart_toStartOf="@+id/buttonAddBeforeSleep"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddBeforeSleep" />
 
     <Button
         android:id="@+id/buttonSeeData"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#B8594D"
         android:onClick="buttonSeeDataClicked"
         android:text="Tarkastele tietojasi"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonTips"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonTips" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonTips"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTips"
+        app:layout_constraintStart_toStartOf="@+id/buttonTips"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddAfterSleep" />
 
     <Button
         android:id="@+id/buttonTips"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#B8594D"
         android:onClick="buttonSeeTipsClicked"
         android:text="Vinkkejä parempaan uneen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonManual"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAddAfterSleep"
+        app:layout_constraintStart_toStartOf="@+id/buttonAddAfterSleep"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeeData" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -74,12 +72,40 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="4dp"
         android:onClick="buttonManualClicked"
         android:text="Ohjeet"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="297dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAddBeforeSleep"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonAddBeforeSleep"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pngtreebird_cartoon_character_on_white_4048164" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

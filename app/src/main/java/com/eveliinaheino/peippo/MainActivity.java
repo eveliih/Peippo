@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         SingletonPeippoVariablesList.getInstance().setArrayListToSingleton(dataArrayList);
-
     }
+
     public void buttonAddAfterSleepClicked(View view){
         Intent intent = new Intent(this, ActivityAddDataAfterSleep.class);
         startActivity(intent);

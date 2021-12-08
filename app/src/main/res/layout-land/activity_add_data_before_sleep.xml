@@ -20,6 +20,7 @@
             android:layout_marginBottom="26dp"
             android:gravity="center"
             android:text="Kuinka väsynyt olet? \n(1 erittäin väsynyt - 5 en ole lainkaan väsynyt)"
+            android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/radioGroupTiredness"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,20 +28,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewMood"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:gravity="center"
-        android:text="Minkälainen mielialasi on? \n(1 huono - 5 erinomainen)"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroupMood"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupTiredness" />
+        <TextView
+            android:id="@+id/textViewMood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center"
+            android:text="Minkälainen mielialasi on? \n(1 huono - 5 erinomainen)"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroupMood"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupTiredness" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -69,22 +71,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="tirednessRadioButtonClicked"
-            android:text="1" />
+            android:text="1"
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/radioButtonTiredness2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="tirednessRadioButtonClicked"
-            android:text="2" />
+            android:text="2"
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/radioButtonTiredness3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="tirednessRadioButtonClicked"
             android:text="3" />
 
@@ -93,16 +100,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="tirednessRadioButtonClicked"
-            android:text="4" />
+            android:text="4"
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/radioButtonTiredness5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="tirednessRadioButtonClicked"
-            android:text="5" />
+            android:text="5"
+            android:textColor="#000000" />
 
     </RadioGroup>
 
@@ -124,40 +135,50 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="moodRadioButtonClicked"
-            android:text="1" />
+            android:text="1"
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/radioButtonMood2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="moodRadioButtonClicked"
-            android:text="2" />
+            android:text="2"
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/radioButtonMood3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="moodRadioButtonClicked"
-            android:text="3" />
+            android:text="3"
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/radioButtonMood4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="moodRadioButtonClicked"
-            android:text="4" />
+            android:text="4"
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/radioButtonMood5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:buttonTint="#B8594D"
             android:onClick="moodRadioButtonClicked"
-            android:text="5" />
+            android:text="5"
+            android:textColor="#000000" />
     </RadioGroup>
 
         <Button
@@ -166,6 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="40dp"
+            android:backgroundTint="#B8594D"
             android:onClick="buttonSavedClicked"
             android:text="Tallenna"
             app:layout_constraintBottom_toBottomOf="parent"

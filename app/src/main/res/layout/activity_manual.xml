@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/pop_up_background"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDCFCF"
+    android:backgroundTintMode="multiply">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        >
+        android:background="#EDCFCF">
 
         <Button
             android:id="@+id/buttonOk"
@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:layout_marginBottom="16dp"
+            android:backgroundTint="#B8594D"
             android:onClick="buttonOkClicked"
             android:text="Ok"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +55,7 @@
             android:layout_marginEnd="16dp"
             android:gravity="center"
             android:text="Ohjeet"
-            android:textColor="#000000"
+            android:textColor="#9C4A3F"
             android:textSize="35dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="@+id/guideline5"

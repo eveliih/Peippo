@@ -122,21 +122,21 @@ public class ActivitySeeData extends AppCompatActivity {
         LineDataSet set1 = new LineDataSet(lineOne, "Mieliala (1-5)");
         LineDataSet set2 = new LineDataSet(lineTwo, "Virkeys (1-5)");
 
-        set1.setColor(Color.rgb(60, 220, 100));
+        set1.setColor(Color.rgb(120, 220, 100));
         set1.setLineWidth(2f);
-        set1.setCircleColor(Color.rgb(60, 220, 100));
+        set1.setCircleColor(Color.rgb(120, 220, 100));
         set1.setCircleRadius(3f);
-        set1.setFillColor(Color.rgb(60, 220, 100));
+        set1.setFillColor(Color.rgb(120, 220, 100));
         set1.setMode(LineDataSet.Mode.LINEAR);
         set1.setDrawValues(false);
         set1.setValueTextSize(10f);
         set1.setValueTextColor(Color.BLACK);
 
-        set2.setColor(Color.rgb(220, 100, 60));
+        set2.setColor(Color.rgb(80, 120, 220));
         set2.setLineWidth(2f);
-        set2.setCircleColor(Color.rgb(220, 100, 60));
+        set2.setCircleColor(Color.rgb(80, 120, 220));
         set2.setCircleRadius(3f);
-        set2.setFillColor(Color.rgb(220, 100, 60));
+        set2.setFillColor(Color.rgb(80, 120, 220));
         set2.setMode(LineDataSet.Mode.LINEAR);
         set2.setDrawValues(false);
         set2.setValueTextSize(10f);
@@ -158,7 +158,7 @@ public class ActivitySeeData extends AppCompatActivity {
         BarDataSet set = new BarDataSet(entries, "Uni (tuntia)");
         set.setDrawValues(false);
 
-        set.setColor(Color.rgb(60, 100, 220));
+        set.setColor(Color.rgb(184, 89, 77));
         set.setValueTextColor(Color.BLACK);
         set.setValueTextSize(10f);
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
