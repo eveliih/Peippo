@@ -16,19 +16,28 @@
             android:name=".ActivityTestiJson"
             android:exported="false" />
         <activity
+            android:name=".ActivityTipDetails"
+            android:exported="false" />
+        <activity
             android:name=".ActivityFeedbackAfterSleep"
             android:exported="false" />
         <activity
             android:name=".ActivityFeedbackBeforeSleep"
             android:exported="false" /> <!-- android:theme="@style/Theme.AppCompat.PopUp"> -->
         <activity
-            android:name=".ActivitySeeTips"
+            android:name=".ActivityTipList"
             android:exported="false" />
         <activity
             android:name=".ActivityAddDataAfterSleep"
             android:exported="false" />
         <activity
             android:name=".ActivityAddDataBeforeSleep"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitySeeData"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityNoDataSaved"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
