@@ -22,14 +22,12 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import java.util.ArrayList;
 
 /**
- * Luokka tuottaa diagrammin käyttäjän syöttämistä tiedoista
+ * Luokka hakee käyttäjän syöttämät tiedot Singletonista ja tuottaa niistä yhdistelmädiagrammin.
  * @author hanne
  */
 
 public class ActivitySeeData extends AppCompatActivity {
     private CombinedChart peippoChart;
-    private String json;
-    private ArrayList<PeippoVariables> variables;
     private ArrayList<Entry> lineOne = new ArrayList<>();
     private ArrayList<Entry> lineTwo = new ArrayList<>();
     private ArrayList<BarEntry> entries = new ArrayList<>();
@@ -45,28 +43,24 @@ public class ActivitySeeData extends AppCompatActivity {
         showCombinedChart();
     }
 
+    /* Hakee käyttäjän tallentamat tiedot Singletonista */
     private void getSavedData() {
         ArrayList<PeippoVariables> peippoList = SingletonPeippoVariablesList.getInstance().getList();
         int labelsSize = peippoList.size() + 1;
         labels = new String[labelsSize];
+        labels[0] = " ";
         for (int i = 0; i < peippoList.size(); i++) {
             lineOne.add(new Entry(i + 1, peippoList.get(i).getMood()));
             lineTwo.add(new Entry(i + 1, peippoList.get(i).getTiredness()));
             entries.add(new BarEntry(i + 1, peippoList.get(i).getSleptHours()));
-        }
-
-
-        labels[0] = " ";
-
-        for (int i = 0; i < peippoList.size(); i++) {
             String date = peippoList.get(i).getDate();
             int a = i + 1;
-                labels[a] = date;
-            }
+            labels[a] = date;
+        }
         }
 
 
-
+        /* Laittaa viiva- ja pylväsdatan yhdistelmädiagrammiin */
         private void showCombinedChart() {
             CombinedData data = new CombinedData();
 
@@ -77,17 +71,16 @@ public class ActivitySeeData extends AppCompatActivity {
             xAxis.setAxisMaximum(data.getXMax() + 0.40f);
             peippoChart.setData(data);
             peippoChart.invalidate();
+            peippoChart.setVisibleXRangeMaximum(11);
         }
 
+        /* Yhdistelmädiagrammin ulkoasuasetukset */
         private void initCombinedChart() {
             peippoChart = findViewById(R.id.combinedChart);
-            peippoChart.getDescription().setText("");
             peippoChart.setBackgroundColor(Color.WHITE);
             peippoChart.setDrawGridBackground(true);
             peippoChart.setDrawBarShadow(true);
-            peippoChart.setHighlightFullBarEnabled(true);
-            peippoChart.setOnTouchListener(null);
-            peippoChart.setClickable(false);
+            peippoChart.getDescription().setText(" ");
 
             /* Tällä saa viivat näkymään pylväiden päällä */
             peippoChart.setDrawOrder(new CombinedChart.DrawOrder[]{
@@ -97,6 +90,7 @@ public class ActivitySeeData extends AppCompatActivity {
             /* Pylväiden ja viivojen selitysmerkkien asettelu */
             Legend legend = peippoChart.getLegend();
             legend.setWordWrapEnabled(true);
+            legend.setTextSize(12f);
             legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
             legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
             legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
@@ -118,13 +112,12 @@ public class ActivitySeeData extends AppCompatActivity {
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
             xAxis.setAxisMinimum(0f);
             xAxis.setGranularity(1f);
+            xAxis.setLabelCount(11);
             xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
-
-            /*  peippoChart.animateXY(2000, 2000); /* Diagrammin auetessa näkyvä animaatio */
         }
 
 
-    /* Tuottaa datan viivadiagrammeihin */
+    /* Tuottaa viivadiagrammit ja niiden ulkoasun */
     private LineData generateLineData() {
         LineDataSet set1 = new LineDataSet(lineOne, "Mieliala (1-5)");
         LineDataSet set2 = new LineDataSet(lineTwo, "Virkeys (1-5)");
@@ -162,17 +155,16 @@ public class ActivitySeeData extends AppCompatActivity {
 
     /* Tuottaa datan pylväsdiagrammiin */
     private BarData generateBarData() {
-        BarDataSet set1 = new BarDataSet(entries, "Uni (tuntia)");
-        set1.setDrawValues(false);
+        BarDataSet set = new BarDataSet(entries, "Uni (tuntia)");
+        set.setDrawValues(false);
 
-        set1.setColor(Color.rgb(60, 100, 220));
-        set1.setValueTextColor(Color.BLACK);
-        // set1.setColors(ColorTemplate.JOYFUL_COLORS) /* Jos haluaa eriväriset pylväät */
-        set1.setValueTextSize(10f);
-        set1.setAxisDependency(YAxis.AxisDependency.LEFT);
+        set.setColor(Color.rgb(60, 100, 220));
+        set.setValueTextColor(Color.BLACK);
+        set.setValueTextSize(10f);
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
 
-        float barWidth = 0.45f; // x2 dataset
-        BarData bardata = new BarData(set1);
+        float barWidth = 0.45f;
+        BarData bardata = new BarData(set);
         bardata.setBarWidth(barWidth);
         return bardata;
 

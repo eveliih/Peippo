@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Luokka kertoo käyttäjälle, ettei tietoja ole syötetty, jos tämä yrittää avata diagrammia ennen
- * tietojen syöttämistä.
+ * tietojen syöttämistä, sekä tarjoaa painikkeita, joista pääsee syöttämään tietoa.
  * @author hanne
  */
 
