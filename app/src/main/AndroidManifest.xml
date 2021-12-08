@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Peippo">
         <activity
             android:name=".ActivityManual"
+            android:theme="@style/Theme.AppCompat.PopUp"
             android:exported="false" />
         <activity
             android:name=".ActivityTestiJson"
@@ -23,7 +24,7 @@
             android:exported="false" />
         <activity
             android:name=".ActivityFeedbackBeforeSleep"
-            android:exported="false" /> <!-- android:theme="@style/Theme.AppCompat.PopUp"> -->
+            android:exported="false" />
         <activity
             android:name=".ActivityTipList"
             android:exported="false" />
