@@ -1,12 +1,16 @@
 package com.eveliinaheino.peippo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class ActivityFeedbackBeforeSleep extends Activity{
+public class ActivityFeedbackBeforeSleep extends AppCompatActivity {
     ArrayList <PeippoVariables> list;
     int mood;
     int tiredness;
@@ -63,4 +67,8 @@ public class ActivityFeedbackBeforeSleep extends Activity{
 
     }
 
+    public void buttonEveningDataCheckClicked(View view){
+        Intent intent = new Intent(this, ActivitySeeData.class);
+        startActivity(intent);
+    }
 }
