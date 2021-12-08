@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="@drawable/pop_up_background"
-    tools:context=".ActivityFeedbackBeforeSleep">
+    tools:context=".ActivityTipList">
 
-    <TextView
-        android:id="@+id/textViewEveningFeedback"
-        android:layout_width="336dp"
-        android:layout_height="564dp"
-        android:layout_marginTop="44dp"
+    <ListView
+        android:id="@+id/tipsListView"
+        android:layout_width="416dp"
+        android:layout_height="599dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

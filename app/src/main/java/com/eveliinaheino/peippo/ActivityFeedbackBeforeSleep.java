@@ -1,18 +1,8 @@
 package com.eveliinaheino.peippo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.WindowManager;
 import android.widget.TextView;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -42,25 +32,22 @@ public class ActivityFeedbackBeforeSleep extends Activity{
 
         getWindow().setAttributes(params);*/
 
-        TextView textViewMood = findViewById(R.id.textViewMoodFeedback);
-        TextView textViewTiredness = findViewById(R.id.textViewTirednessFeedback);
+        TextView textViewEveningFeedback = findViewById(R.id.textViewEveningFeedback);
 
-        list = SingletonMoodsAndTiredness.getInstance().getList();
+        list = SingletonPeippoVariablesList.getInstance().getList();
 
         mood = list.get(list.size() - 1).getMood();
         tiredness = list.get(list.size() - 1).getTiredness();
 
         GetFeedbackMessage messages = new GetFeedbackMessage(mood,tiredness);
-        textViewMood.setText(messages.getMoodMessage());
-        textViewTiredness.setText(messages.getTirednessMessage());
-
+        textViewEveningFeedback.setText(messages.getFeedbackEvening());
 
     }
 
 
     @Override
     protected void onStop() {
-        list = SingletonMoodsAndTiredness.getInstance().getList();
+        list = SingletonPeippoVariablesList.getInstance().getList();
         super.onStop();
         //halutaanko tallentaa tiedot vasta tässä kohtaa? Nyt tallennus tapahtuu samalla, kun käyttäjä klikkaa Tallenna nappulaa ActivityAddDataBeforeSleep
         /* Gson gson = new Gson();

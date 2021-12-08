@@ -1,21 +1,21 @@
 package com.eveliinaheino.peippo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ActivityAddDataBeforeSleep extends AppCompatActivity {
     private RadioGroup radioGroupTiredness;
@@ -87,11 +87,15 @@ public class ActivityAddDataBeforeSleep extends AppCompatActivity {
     public void buttonSavedClicked(View view) {
 
         if (tiredness != 0 && mood != 0) {      //jos molempiin radiobuttoneihin on tehty valinta niin tallennetaan arvot listalle&shared prefrensseihin ja aloitetaan uusi aktiviteetti
-            SingletonMoodsAndTiredness.getInstance().getList().add(new PeippoVariables(0, tiredness, mood));
+            Calendar calendar = Calendar.getInstance();
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+            int month = calendar.get(Calendar.MONTH);
+            month++;
+            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables(0, tiredness, mood, day, month));
             Intent intent = new Intent(this, ActivityFeedbackBeforeSleep.class);
 
             Gson gson = new Gson();
-            ArrayList<PeippoVariables> list = SingletonMoodsAndTiredness.getInstance().getList();
+            ArrayList<PeippoVariables> list = SingletonPeippoVariablesList.getInstance().getList();
 
             String jsonPeippoVariables = gson.toJson(list);
 
