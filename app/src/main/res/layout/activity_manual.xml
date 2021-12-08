@@ -21,10 +21,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="376dp"
-        android:layout_height="378dp"
+        android:layout_width="385dp"
+        android:layout_height="403dp"
         android:layout_marginBottom="16dp"
-        android:text="Tervetuloa käyttämään Peippo-sovellusta! Sovelluksen etusivulla näet ohjeiden lisäksi neljä eri painiketta joiden toiminnallisuudet selitetään seuraavaksi lyhyesti. Toivottavasti saat apua unesi seuraamisen Peippo-sovelluksesta!\n\nIllalla päääset tallentamaan mielialasi sekä väsymystasosi klikkaamalla Lisää tietoja ennen nukkumista -painiketta. Täytä kaikki tiedot ennen tallentamista.\n\nAamulla voit lisätä nukkumasi tunnit, mielialasi sekä väsymystasosi klikkaamalla etusivulla näkyvää Lisää tietoja heräämisen jälkeen -painiketta. Nukutut tunnit tulee ilmoittaa kokonaislukuna 0-24 väliltä. Pyöristä itse nukkumasi tunnit lähimpään kokonaislukuun.\n\nTarkastele tietojasi -osiosta näet visuaalisesti esitettynä tallentamasi tiedot. Voit hyödyntää tietoja mielialan, väsymystason ja nukuttujen tuntien seuraamiseen.\n\nVinkkejä parempaan uneen -osiosta löydät paljon hyödyllistä tietoa, miten voit edistää untasi."
+        android:text="Tervetuloa käyttämään Peippo-sovellusta! Sovelluksen etusivulla näet ohjeiden lisäksi neljä eri painiketta joiden toiminnallisuudet selitetään seuraavaksi lyhyesti. Toivottavasti saat apua unesi seuraamisen Peippo-sovelluksesta!\n\nIllalla päääset tallentamaan mielialasi sekä väsymystasosi klikkaamalla Lisää tietoja ennen nukkumista -painiketta. Valitse sekä mielialalle että väsymykselle yksi arvo väliltä 1-5. Täytä kaikki tiedot ennen tallentamista.\n\nAamulla voit lisätä nukkumasi tunnit, mielialasi sekä väsymystasosi klikkaamalla etusivulla näkyvää Lisää tietoja heräämisen jälkeen -painiketta. Nukutut tunnit tulee ilmoittaa kokonaislukuna 0-24 väliltä. Pyöristä itse nukkumasi tunnit lähimpään kokonaislukuun.\n\nTarkastele tietojasi -osiosta näet visuaalisesti esitettynä tallentamasi tiedot. Voit hyödyntää tietoja mielialan, väsymystason ja nukuttujen tuntien seuraamiseen.\n\nVinkkejä parempaan uneen -osiosta löydät paljon hyödyllistä tietoa, jonka avulla voit nukkua entistä paremmin."
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         android:id="@+id/buttonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="148dp"
         android:onClick="buttonOkClicked"
         android:text="Ok"
         app:layout_constraintBottom_toBottomOf="parent"
