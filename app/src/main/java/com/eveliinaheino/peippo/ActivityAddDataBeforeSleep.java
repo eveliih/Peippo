@@ -14,6 +14,10 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+/**
+ * Aktiviteetti-luokka, jossa käyttäjä voi lisätä tietoja illalla. Käyttäjältä luetut tiedot tallennetaan.
+ * @author Eveliina
+ */
 public class ActivityAddDataBeforeSleep extends AppCompatActivity {
     private int tiredness;
     private int mood;

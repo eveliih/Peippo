@@ -10,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Aktiviteetti-luokka,jossa haetaan käyttäjän aamulla syöttämien arvojen perusteella arvojen mukainen palaute, joka näytetään käyttäjälle.
  * Käyttäjän klikatessa Tarkastele tietojasi-nappulaa, siirrytään toiseen aktiviteettiin.
- *  * @author Eveliina
+ * @author Eveliina
  */
 public class ActivityFeedbackAfterSleep extends AppCompatActivity {
    private ArrayList<PeippoVariables> list;

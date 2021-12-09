@@ -7,6 +7,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Aktiviteetti-luokka, joka näyttää SingletonTips-luokan sisältämiä tekstejä
+ * käyttäjän TipList-aktiviteetissa tekemän valinnan mukaan.
+ * @author Katja
+ */
+
 public class ActivityTipDetails extends AppCompatActivity {
     private ArrayList<String> titles;
     private ArrayList<String> texts;
