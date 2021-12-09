@@ -2,6 +2,10 @@ package com.eveliinaheino.peippo;
 
 import java.util.ArrayList;
 
+/**
+ * Singleton-luokka, joka sisältää ListView:ssa ja TipDetails-activityssa tarvittavat tekstitiedot.
+ * @Author Katja
+ */
 public class SingletonTips {
     private static final SingletonTips ourInstance = new SingletonTips();
     private ArrayList<String> tipTitles;
@@ -126,9 +130,8 @@ public class SingletonTips {
                 "Lähde: Terveyskirjasto, Liikaunisuus");
     }
 
-    public ArrayList<String> getTitles(){
-        return this.tipTitles;
-    }
+    public ArrayList<String> getTitles() { return this.tipTitles; }
+
     public ArrayList<String> getTexts() { return this.tipTexts; }
 }
 

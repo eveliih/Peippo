@@ -11,6 +11,12 @@ import android.widget.ListView;
 
 import java.util.List;
 
+/**
+ * Luokka luo ListView näkymän. Käyttäjä siirtyy seuraavaan aktiviteettiin painamalla
+ * listalta haluamaansa nappia.
+ * @author Katja
+ */
+
 public class ActivityTipList extends AppCompatActivity {
     private List<String> titles = SingletonTips.getInstance().getTitles();
     private ArrayAdapter<String> tipsAdapter;

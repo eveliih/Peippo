@@ -11,7 +11,8 @@ import android.view.WindowManager;
 
 /**
  * Aktiviteetti-luokka, joka näyttää käyttäjälle sovelluksen käyttöohjeet pop up-ikkunassa.
- * Ok-nappulaa klikatessa palataan etusivulle
+ * Ok-nappulaa klikatessa palataan etusivulle.
+ * @author Eveliina
  */
 public class ActivityManual extends Activity {
 

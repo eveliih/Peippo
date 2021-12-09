@@ -1,7 +1,9 @@
 package com.eveliinaheino.peippo;
 
 /**
- * Luokka pitää sisällään käyttäjän antamiin arvoihin perustuvat palautteet. Illalle sekä aamulle omat konstruktorit.
+ * Luokka pitää sisällään käyttäjän antamiin arvoihin perustuvat palautteet.
+ * Illalle sekä aamulle omat konstruktorit.
+ * @Eveliina
  */
 public class GetFeedbackMessage {
     private int mood;
