@@ -9,19 +9,14 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.gson.Gson;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class ActivityAddDataBeforeSleep extends AppCompatActivity {
-    private RadioGroup radioGroupTiredness;
-    private RadioGroup radioGroupMood;
-    int tiredness;
-    int mood;
+    private int tiredness;
+    private int mood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,15 +78,19 @@ public class ActivityAddDataBeforeSleep extends AppCompatActivity {
             break;
     }
 }
-
+    /**
+     * Käyttäjän klikatessa Tallenna-nappia tarkistetaan, että mielialalle ja väsymykselle on tallennettu arvot.
+     * Jos valinta on tehty molempiin kohtiin, tallennetaan arvot ja avataan uusi aktiviteetti, jossa käyttäjä saa palautteen tallentamiensa arvojen perusteella.
+     * Jos valintaa ei ole tehty, käyttäjälle näytetään Toast-viesti.
+     */
     public void buttonSavedClicked(View view) {
 
-        if (tiredness != 0 && mood != 0) {      //jos molempiin radiobuttoneihin on tehty valinta niin tallennetaan arvot listalle&shared prefrensseihin ja aloitetaan uusi aktiviteetti
+        if (tiredness != 0 && mood != 0) {
             Calendar calendar = Calendar.getInstance();
             int day = calendar.get(Calendar.DAY_OF_MONTH);
             int month = calendar.get(Calendar.MONTH);
             month++;
-            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables(0, tiredness, mood, day, month));
+            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables (tiredness, mood, day, month));
             Intent intent = new Intent(this, ActivityFeedbackBeforeSleep.class);
 
             Gson gson = new Gson();
@@ -107,7 +106,7 @@ public class ActivityAddDataBeforeSleep extends AppCompatActivity {
             prefEditor.commit();
 
             startActivity(intent);
-        } else {      //jos molempiin radiobuttoneihin ei ole tehty valintaa niin käyttäjälle näytetään viesti, jossa kehotetaan tallentamaan tiedot
+        } else {
             Context context = getApplicationContext();
             CharSequence text = "Täytä kaikki kohdat ennen tallentamista!";
             int duration = Toast.LENGTH_SHORT;

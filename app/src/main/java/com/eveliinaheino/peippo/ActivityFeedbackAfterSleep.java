@@ -1,19 +1,22 @@
 package com.eveliinaheino.peippo;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
+/**
+ * Aktiviteetti-luokka,jossa haetaan käyttäjän aamulla syöttämien arvojen perusteella arvojen mukainen palaute, joka näytetään käyttäjälle.
+ * Käyttäjän klikatessa Tarkastele tietojasi-nappulaa, siirrytään toiseen aktiviteettiin.
+ *  * @author Eveliina
+ */
 public class ActivityFeedbackAfterSleep extends AppCompatActivity {
-    ArrayList<PeippoVariables> list;
-    int mood;
-    int tiredness;
-    int sleptHours;
+   private ArrayList<PeippoVariables> list;
+   private int mood;
+   private int tiredness;
+   private int sleptHours;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

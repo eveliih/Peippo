@@ -1,6 +1,5 @@
 package com.eveliinaheino.peippo;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +9,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 
+/**
+ * Aktiviteetti-luokka, joka näyttää käyttäjälle sovelluksen käyttöohjeet pop up-ikkunassa.
+ * Ok-nappulaa klikatessa palataan etusivulle
+ */
 public class ActivityManual extends Activity {
 
     @Override
@@ -17,17 +20,17 @@ public class ActivityManual extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
 
-        DisplayMetrics displayMetrics = new DisplayMetrics(); //tulevalla jutulla tehdään Activitystä popup ikkuna
+        DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
 
-        getWindow().setLayout((int)(width*.8), (int)(height*.5));
+        getWindow().setLayout((int)(width*.8), (int)(height*.5)); //määritellään pop up ikkunan koko
 
-        WindowManager.LayoutParams params = getWindow().getAttributes(); //tällä asetetaan popup ikkunan sijainti
-        params.gravity = Gravity.CENTER;
-        params.x = 0; //keskellä
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.gravity = Gravity.CENTER; //määritellään pop up ikkunan sijainti
+        params.x = 0;
         params.y = -10;
 
         getWindow().setAttributes(params);
