@@ -12,16 +12,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="170dp"
         android:layout_marginEnd="50dp"
         android:backgroundTint="#B8594D"
         android:onClick="buttonAddBeforeSleepClicked"
         android:text="@string/lisaa_tietoja_ennen_nukkumista"
         app:layout_constraintBottom_toTopOf="@+id/buttonAddAfterSleep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonsTop" />
 
     <Button
         android:id="@+id/buttonAddAfterSleep"
@@ -59,14 +58,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="270dp"
         android:backgroundTint="#B8594D"
         android:onClick="buttonSeeTipsClicked"
         android:text="@string/vinkkeja_parempaan_uneen"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonsBottom"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSeeData" />
 
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp"
+        app:layout_constraintGuide_begin="218dp"
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
@@ -95,15 +95,16 @@
     <ImageView
         android:id="@+id/mainImage"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonManual"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineImageBottom"
+
+        app:layout_constraintEnd_toStartOf="@+id/guidelineImageRight"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddBeforeSleep"
-        app:layout_constraintVertical_bias="0.054"
+        app:layout_constraintLeft_toRightOf="@id/guidelineImageLeft"
+        app:layout_constraintStart_toStartOf="@+id/guidelineImageLeft"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineImageTop"
+        app:layout_constraintVertical_bias="0.428"
         app:srcCompat="@drawable/pngtreebird_cartoon_character_on_white_4048164" />
 
     <ImageView
@@ -119,5 +120,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="249dp"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonsBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="417dp"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonsTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageLeft"
+        app:layout_constraintGuide_percent="0.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageRight"
+        app:layout_constraintGuide_percent="0.85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImageBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
