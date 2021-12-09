@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
         json = prefGet.getString("jsonPeippoVariables", " ");
 
-
         if(json.equals(" ")){
             dataArrayList = new ArrayList<>();
         }
@@ -39,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         SingletonPeippoVariablesList.getInstance().setArrayListToSingleton(dataArrayList);
-
     }
+
     public void buttonAddAfterSleepClicked(View view){
         Intent intent = new Intent(this, ActivityAddDataAfterSleep.class);
         startActivity(intent);
@@ -63,5 +62,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ActivityNoDataSaved.class);
             startActivity(intent);
         }
+    }
+    public void buttonManualClicked(View view){
+        Intent intent = new Intent(this, ActivityManual.class);
+        startActivity(intent);
     }
 }

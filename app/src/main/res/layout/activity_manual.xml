@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDCFCF"
+    android:backgroundTintMode="multiply">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="#EDCFCF">
+
+        <Button
+            android:id="@+id/buttonOk"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#B8594D"
+            android:onClick="buttonOkClicked"
+            android:text="Ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewText"
+            app:rippleColor="#673AB7" />
+
+        <TextView
+            android:id="@+id/textViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="Tervetuloa käyttämään Peippo-sovellusta! Sovelluksen etusivulla näet ohjeiden lisäksi neljä eri painiketta joiden toiminnallisuudet selitetään seuraavaksi lyhyesti. Toivottavasti saat apua unesi seuraamisen Peippo-sovelluksesta!\n\nIllalla päääset tallentamaan mielialasi sekä väsymystasosi klikkaamalla Lisää tietoja ennen nukkumista -painiketta. Valitse sekä mielialalle että väsymykselle yksi arvo väliltä 1-5. Täytä kaikki tiedot ennen tallentamista.\n\nAamulla voit lisätä nukkumasi tunnit, mielialasi sekä väsymystasosi klikkaamalla etusivulla näkyvää Lisää tietoja heräämisen jälkeen -painiketta. Nukutut tunnit tulee ilmoittaa kokonaislukuna 0-24 väliltä. Pyöristä itse nukkumasi tunnit lähimpään kokonaislukuun.\n\nTarkastele tietojasi -osiosta näet visuaalisesti esitettynä tallentamasi tiedot. Voit hyödyntää tietoja mielialan, väsymystason ja nukuttujen tuntien seuraamiseen.\n\nVinkkejä parempaan uneen -osiosta löydät paljon hyödyllistä tietoa, jonka avulla voit nukkua entistä paremmin."
+            android:textColor="#000000"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/heading" />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="142dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="Ohjeet"
+            android:textColor="#9C4A3F"
+            android:textSize="35dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="404dp"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="701dp"
+            app:layout_constraintGuide_percent="0.01" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="677dp"
+            app:layout_constraintGuide_percent="0.99" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

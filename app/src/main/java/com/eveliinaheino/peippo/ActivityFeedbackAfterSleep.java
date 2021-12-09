@@ -2,7 +2,9 @@ package com.eveliinaheino.peippo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,5 +30,10 @@ public class ActivityFeedbackAfterSleep extends AppCompatActivity {
 
         textViewMood.setText(getFeedbackMessage.getFeedbackMorning());
 
+    }
+
+    public void buttonMorningDataCheckClicked(View view){
+        Intent intent = new Intent(this, ActivitySeeData.class);
+        startActivity(intent);
     }
 }
