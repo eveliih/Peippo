@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_main.xml" value="0.2208994708994709" />
+        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_add_data_after_sleep.xml" value="0.1921875" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_add_data_before_sleep.xml" value="0.1921875" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_feedback_after_sleep.xml" value="0.1921875" />
