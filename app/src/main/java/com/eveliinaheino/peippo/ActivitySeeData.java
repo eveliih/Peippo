@@ -156,7 +156,7 @@ public class ActivitySeeData extends AppCompatActivity {
     }
 
 
-    /* Metodi tuottaa datan pylväsdiagrammiin  */
+    /* Metodi tuottaa datan pylväsdiagrammiin */
     private BarData generateBarData() {
         BarDataSet set = new BarDataSet(entries, "Uni (tuntia)");
         set.setDrawValues(false);
