@@ -13,30 +13,37 @@
             android:name=".ActivityManual"
             android:theme="@style/Theme.AppCompat.PopUp"
             android:exported="false" />
-
         <activity
             android:name=".ActivityTipDetails"
+            android:parentActivityName=".ActivityTipList"
             android:exported="false" />
         <activity
             android:name=".ActivityFeedbackAfterSleep"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ActivityFeedbackBeforeSleep"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ActivityTipList"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ActivityAddDataAfterSleep"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ActivityAddDataBeforeSleep"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ActivitySeeData"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ActivityNoDataSaved"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
