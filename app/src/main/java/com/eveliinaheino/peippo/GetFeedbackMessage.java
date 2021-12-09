@@ -34,7 +34,7 @@ public class GetFeedbackMessage {
         return getTirednessMessageEvening() + getMoodMessageEvening();
     }
 
-    public String getMoodMessageMorning(){
+    private String getMoodMessageMorning(){
         if(this.mood == 1 || this.mood == 2){
             return "Arvioit mielialasi olevan huono. Huonosti nukuttu yö voi vaikuttaa myös mielialaan. Jokaiselle sattuu myös huonompia päiviä toisinaan. Jos mielialasi jatkuu huonona pitkään yhtäjaksoisesti, hakeudu terveydenhuollon ammattilaisen vastaanotolle. Voit seurata mielialaasi Tarkastele tietoja -osion avulla.";
         }else if(this.mood == 3){
@@ -44,7 +44,7 @@ public class GetFeedbackMessage {
         }return "Virhe. Yritä tallentaa tiedot uudelleen.";
     }
 
-    public String getMoodMessageEvening(){
+    private String getMoodMessageEvening(){
         if(this.mood == 1 || this.mood == 2){
             return "Arvioit mielialasi olevan huono. Huolihetken pitäminen tai rentoutuminen ennen nukkumaanmenoa voi auttaa. Katso tarkempia ohjeita Vinkkejä parempaan uneen -osiosta.";
         }else if(this.mood == 3){
@@ -54,7 +54,7 @@ public class GetFeedbackMessage {
         }return "Virhe. Yritä tallentaa tiedot uudelleen.";
     }
 
-    public String getTirednessMessageMorning(){
+    private String getTirednessMessageMorning(){
         if(this.tiredness == 1){
             return "Nukuit " + getSleepHrs() + "ja arvioit olevasi väsynyt. Nukuitko mahdollisesti liikaa tai liian vähän? Ole yhteydessä terveydenhuollon ammattilaiseen, jos tunnet olosi jatkuvasti väsyneeksi riittävistä yöunista huolimatta. Tarkastele tietojasi osion avulla voit saada käsityksen montako tuntia sinun tulee nukkua tunteaksesi olosi virkeäksi.\n\n";
         }else if(this.tiredness == 2){
@@ -66,14 +66,14 @@ public class GetFeedbackMessage {
         }return "Virhe. Yritä tallentaa tiedot uudelleen.";
     }
 
-    public String getSleepHrs(){
+    private String getSleepHrs(){
         if(this.sleptHours == 1){
             return this.sleptHours + " tunnin ";
         }
         return this.sleptHours + " tuntia ";
     }
 
-    public String getTirednessMessageEvening(){
+    private String getTirednessMessageEvening(){
         if(this.tiredness == 1 || this.tiredness == 2){
             return "Arvioit olevasi väsynyt. Ajoittainen väsymys on normaalia. Toivottavasti saat nukuttua hyvin ja tunnet olosi virkeäksi aamulla! Nyt siis kipin kapin unten maille!\n\n";
         }else if(this.tiredness == 3){
@@ -83,7 +83,7 @@ public class GetFeedbackMessage {
         }return "Virhe. Yritä tallentaa tiedot uudelleen.";
     }
 
-    public String getSleepHrsMessage(){
+    private String getSleepHrsMessage(){
         if(this.sleptHours >= 0 && this.sleptHours < 7){
             return "Aikuisen keskiverto unentarve on 7-9 tuntia. Nukuit vähemmän. Jos tunnet olosi virkeäksi, voi olla että pärjäät keskivertoa vähemmällä unella. Voit tarkastella tietojasi pidemmältä aikaväliltä Tarkastele tietoja -osiosta.\n\n";
         }else if(this.sleptHours > 6 && this.sleptHours < 10){
