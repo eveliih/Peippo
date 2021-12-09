@@ -1,5 +1,8 @@
 package com.eveliinaheino.peippo;
 
+/**
+ * Luokka pitää sisällään käyttäjän antamiin arvoihin perustuvat palautteet. Illalle sekä aamulle omat konstruktorit.
+ */
 public class GetFeedbackMessage {
     private int mood;
     private int tiredness;
@@ -16,6 +19,21 @@ public class GetFeedbackMessage {
         this.tiredness = tiredness;
     }
 
+    /**
+     * Metodi hyödyntää tästä luokasta löytyviä muita metodeja, joiden avulla koostetaan käyttäjälle annettava palaute aamulla.
+     * Muut metodit valitsevat palauttamansa viestin käyttäjän tallentaman arvon perusteella.
+     */
+    public String getFeedbackMorning(){
+        return getTirednessMessageMorning() + getSleepHrsMessage() + getMoodMessageMorning();
+    }
+    /**
+     * Metodi hyödyntää tästä luokasta löytyviä muita metodeja, joiden avulla koostetaan käyttäjälle palaute illalla.
+     * Muut metodit valitsevat palauttamansa viestin käyttäjän tallentaman arvon perusteella.
+     */
+    public String getFeedbackEvening(){
+        return getTirednessMessageEvening() + getMoodMessageEvening();
+    }
+
     public String getMoodMessageMorning(){
         if(this.mood == 1 || this.mood == 2){
             return "Arvioit mielialasi olevan huono. Huonosti nukuttu yö voi vaikuttaa myös mielialaan. Jokaiselle sattuu myös huonompia päiviä toisinaan. Jos mielialasi jatkuu huonona pitkään yhtäjaksoisesti, hakeudu terveydenhuollon ammattilaisen vastaanotolle. Voit seurata mielialaasi Tarkastele tietoja -osion avulla.";
@@ -23,7 +41,7 @@ public class GetFeedbackMessage {
             return "Arvioit mielialasi olevan neutraali. Tarkastele tietojasi -osiosta voita tarkastella mielialaasi pidemmällä aikavälillä. Tapahtuiko mielialassasi muutosta yön aikana?";
         }else if(this.mood == 4 || this.mood == 5){
             return "Arvioit mielialasi olevan hyvä. Oletko havainnut yhteyttä hyvin nukutun yön ja hyvän mielialan välillä?";
-        }return "Virhe. Yritä tallentaa tiedot uudelleen."; // tätä ei pitäisi koskaan tapahtua
+        }return "Virhe. Yritä tallentaa tiedot uudelleen.";
     }
 
     public String getMoodMessageEvening(){
@@ -48,6 +66,13 @@ public class GetFeedbackMessage {
         }return "Virhe. Yritä tallentaa tiedot uudelleen.";
     }
 
+    public String getSleepHrs(){
+        if(this.sleptHours == 1){
+            return this.sleptHours + " tunnin ";
+        }
+        return this.sleptHours + " tuntia ";
+    }
+
     public String getTirednessMessageEvening(){
         if(this.tiredness == 1 || this.tiredness == 2){
             return "Arvioit olevasi väsynyt. Ajoittainen väsymys on normaalia. Toivottavasti saat nukuttua hyvin ja tunnet olosi virkeäksi aamulla! Nyt siis kipin kapin unten maille!\n\n";
@@ -66,21 +91,6 @@ public class GetFeedbackMessage {
         }else if(this.sleptHours > 9){
             return "Aikuisen keskiverto unentarve on 7-9 tuntia. Nukuit yli yhdeksän tuntia. Liian pitkät yöunet voivat saada olosi tuntumaan väsyneelle. Jos nukut jatkuvasti hyvin pitkiä yöunia, lue lisää tietoa liikaunisuudesta Vinkkejä parempaan uneen -osiosta.\n\n";
         }return "Virhe. Yritä tallentaa tiedot uudelleen.";
-    }
-
-    public String getSleepHrs(){
-        if(this.sleptHours == 1){ //Olet nukkunut 1 TUNNIN tarvitaan vain ykkösen kohdalla, muuten tarvitaan TUNTIA
-            return this.sleptHours + " tunnin ";
-        }
-        return this.sleptHours + " tuntia ";
-    }
-
-    public String getFeedbackMorning(){
-        return getTirednessMessageMorning() + getSleepHrsMessage() + getMoodMessageMorning();
-    }
-
-    public String getFeedbackEvening(){
-        return getTirednessMessageEvening() + getMoodMessageEvening();
     }
 }
 

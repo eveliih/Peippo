@@ -18,9 +18,13 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+/**
+ * Aktiviteetti-luokka, jossa käyttäjä voi lisätä tietoja aamulla. Käyttäjältä luetut tiedot tallennetaan.
+ * @author Eveliina
+ */
 public class ActivityAddDataAfterSleep extends AppCompatActivity {
-    int tiredness;
-    int mood;
+    private int tiredness;
+    private int mood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,19 +86,22 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
         }
     }
 
+    /**
+     * Käyttäjän klikatessa Tallenna-nappia tarkistetaan, että kaikki kohdat on täytetty ja annetut arvot ovat haluttujen kriteerien mukaisia.
+     * Jos kaikki ehdot täyttyvät, tallennetaan arvot ja avataan uusi aktiviteetti, jossa käyttäjä saa palautteen tallentamiensa arvojen perusteella.
+     * Jos ehdot eivät täyty, käyttäjälle näytetään Toast-viesti halutuista muutoksista.
+     */
     public void buttonSavedClicked(View view){
         EditText editTextSleptHours = findViewById(R.id.editTextSleepHours);
-
         Intent intent = new Intent(this, ActivityFeedbackAfterSleep.class);
-        String log = editTextSleptHours.getText().toString();
-        Log.d("piste", log);
 
-        if(tiredness != 0 && mood !=0 && !(editTextSleptHours.getText().toString().isEmpty()) && !(editTextSleptHours.getText().toString().contains(".")) && !(editTextSleptHours.getText().toString().equals("-"))){ //jos kaikki pyydetyty tiedot on annettu niin tallennetaan tiedot ja aloitetaan uusi aktiviteetti
+        if(tiredness != 0 && mood !=0 && !(editTextSleptHours.getText().toString().isEmpty()) && !(editTextSleptHours.getText().toString().contains(".")) && !(editTextSleptHours.getText().toString().equals("-"))){
             int sleptHrs = Integer.parseInt(editTextSleptHours.getText().toString());
             Calendar calendar = Calendar.getInstance();
             int day = calendar.get(Calendar.DAY_OF_MONTH);
             int month = calendar.get(Calendar.MONTH);
             month++;
+
             if(sleptHrs > 24 || sleptHrs < 0){
                 Context context = getApplicationContext();
                 CharSequence text = "Nukutut tunnit 0 - 24 h!";
@@ -104,9 +111,8 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
                 toast.show();
             }
             else{
-            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables(1, tiredness, mood, sleptHrs, day, month));
+            SingletonPeippoVariablesList.getInstance().getList().add(new PeippoVariables(tiredness, mood, sleptHrs, day, month));
 
-            //halutaanko tallentaa tässä vai myöhemmin?
             Gson gson = new Gson();
             ArrayList<PeippoVariables> list = SingletonPeippoVariablesList.getInstance().getList();
 
@@ -129,7 +135,7 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
-        else{ //jos valintaa ei ole tehty näytetään käyttäjälle viesti
+        else{
             Context context = getApplicationContext();
             CharSequence text = "Täytä kaikki kohdat ennen tallentamista!";
             int duration = Toast.LENGTH_SHORT;
