@@ -1,19 +1,16 @@
 package com.eveliinaheino.peippo;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 /**
- * Luokka kertoo käyttäjälle, ettei tietoja ole syötetty, jos tämä yrittää avata diagrammia ennen
- * tietojen syöttämistä, sekä tarjoaa painikkeita, joista pääsee syöttämään tietoa.
+ * Luokka avautuu, mikäli käyttäjä yrittää avata diagrammia, ennen kuin on syöttänyt sovellukseen
+ * ollenkaan tietoja.
  * @author hanne
  */
 
-public class ActivityNoDataSaved extends AppCompatActivity {
+public class ActivityNoDataSaved extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +21,13 @@ public class ActivityNoDataSaved extends AppCompatActivity {
         tv.setText(message);
     }
 
-
+    /* Hakee yläluokasta metodin, jolla pääsee ActivityAddDateAfterSleep-aktiviteettiin */
     public void buttonAddAfterSleepClicked(View view) {
-        Intent intent = new Intent(this, ActivityAddDataAfterSleep.class);
-        startActivity(intent);
+        super.buttonAddAfterSleepClicked(view);
     }
 
+    /* Hakee yläluokasta metodin, jolla pääsee ActivityAddDataBeforeSleep-aktiviteettiin */
     public void buttonAddBeforeSleepClicked(View view) {
-        Intent intent = new Intent(this, ActivityAddDataBeforeSleep.class);
-        startActivity(intent);
+        super.buttonAddBeforeSleepClicked(view);
     }
 }

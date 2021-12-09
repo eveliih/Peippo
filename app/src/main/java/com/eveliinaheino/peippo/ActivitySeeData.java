@@ -22,7 +22,8 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import java.util.ArrayList;
 
 /**
- * Luokka hakee käyttäjän syöttämät tiedot Singletonista ja tuottaa niistä yhdistelmädiagrammin.
+ * Luokka hakee käyttäjän syöttämät tiedot SinletonPeippoVariablesList-luokasta
+ * ja tuottaa niistä yhdistelmädiagrammin.
  * @author hanne
  */
 
@@ -43,7 +44,8 @@ public class ActivitySeeData extends AppCompatActivity {
         showCombinedChart();
     }
 
-    /* Hakee käyttäjän tallentamat tiedot Singletonista */
+    /* Metodi hakee käyttäjän tallentamat tiedot Singletonista
+    * ja lisää ne diagrammin viivojen ja pylvään omiin ArrayListeihin */
     private void getSavedData() {
         ArrayList<PeippoVariables> peippoList = SingletonPeippoVariablesList.getInstance().getList();
         int labelsSize = peippoList.size() + 1;
@@ -60,7 +62,8 @@ public class ActivitySeeData extends AppCompatActivity {
         }
 
 
-        /* Laittaa viiva- ja pylväsdatan yhdistelmädiagrammiin */
+        /* Metodi asettaa viiva- ja pylväsdatan yhdistelmädiagrammiin
+        * sekä avaa diagrammin  */
         private void showCombinedChart() {
             CombinedData data = new CombinedData();
 
@@ -74,7 +77,7 @@ public class ActivitySeeData extends AppCompatActivity {
             peippoChart.setVisibleXRangeMaximum(11);
         }
 
-        /* Yhdistelmädiagrammin ulkoasuasetukset */
+        /* Metodi asettaa yhdistelmädiagrammin ulkoasun */
         private void initCombinedChart() {
             peippoChart = findViewById(R.id.combinedChart);
             peippoChart.setBackgroundColor(Color.WHITE);
@@ -82,12 +85,12 @@ public class ActivitySeeData extends AppCompatActivity {
             peippoChart.setDrawBarShadow(true);
             peippoChart.getDescription().setText(" ");
 
-            /* Tällä saa viivat näkymään pylväiden päällä */
+            /* Laittaa viivat näkymään pylväiden päällä */
             peippoChart.setDrawOrder(new CombinedChart.DrawOrder[]{
                     CombinedChart.DrawOrder.BAR, CombinedChart.DrawOrder.LINE
             });
 
-            /* Pylväiden ja viivojen selitysmerkkien asettelu */
+            /* Asettelee pylväiden ja viivojen selitysmerkit */
             Legend legend = peippoChart.getLegend();
             legend.setWordWrapEnabled(true);
             legend.setTextSize(12f);
@@ -95,7 +98,7 @@ public class ActivitySeeData extends AppCompatActivity {
             legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
             legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
 
-            /* Diagrammin oikealla, vasemmalla ja alapuolella olevat merkinnät */
+            /* Asettaa Y ja X-akselien merkinnät */
             YAxis rightAxis = peippoChart.getAxisRight();
             rightAxis.setDrawGridLines(false);
             rightAxis.setAxisMinimum(0f);
@@ -117,7 +120,7 @@ public class ActivitySeeData extends AppCompatActivity {
         }
 
 
-    /* Tuottaa viivadiagrammit ja niiden ulkoasun */
+    /* Metodi tuottaa viivadiagrammit ja asettaa viivojen ulkoasun */
     private LineData generateLineData() {
         LineDataSet set1 = new LineDataSet(lineOne, "Mieliala (1-5)");
         LineDataSet set2 = new LineDataSet(lineTwo, "Virkeys (1-5)");
@@ -153,7 +156,7 @@ public class ActivitySeeData extends AppCompatActivity {
     }
 
 
-    /* Tuottaa datan pylväsdiagrammiin */
+    /* Metodi tuottaa datan pylväsdiagrammiin  */
     private BarData generateBarData() {
         BarDataSet set = new BarDataSet(entries, "Uni (tuntia)");
         set.setDrawValues(false);
