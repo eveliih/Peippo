@@ -22,7 +22,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import java.util.ArrayList;
 
 /**
- * Luokka hakee käyttäjän syöttämät tiedot SinletonPeippoVariablesList-luokasta
+ * Luokka hakee käyttäjän syöttämät tiedot SingletonPeippoVariablesList-luokasta
  * ja tuottaa niistä yhdistelmädiagrammin.
  * @author hanne
  */
