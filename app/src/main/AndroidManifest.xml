@@ -13,9 +13,7 @@
             android:name=".ActivityManual"
             android:theme="@style/Theme.AppCompat.PopUp"
             android:exported="false" />
-        <activity
-            android:name=".ActivityTestiJson"
-            android:exported="false" />
+
         <activity
             android:name=".ActivityTipDetails"
             android:exported="false" />
