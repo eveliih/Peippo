@@ -21,12 +21,10 @@ public class ActivityNoDataSaved extends MainActivity {
         tv.setText(message);
     }
 
-    /* Hakee yläluokasta metodin, jolla pääsee ActivityAddDateAfterSleep-aktiviteettiin */
     public void buttonAddAfterSleepClicked(View view) {
         super.buttonAddAfterSleepClicked(view);
     }
 
-    /* Hakee yläluokasta metodin, jolla pääsee ActivityAddDataBeforeSleep-aktiviteettiin */
     public void buttonAddBeforeSleepClicked(View view) {
         super.buttonAddBeforeSleepClicked(view);
     }
