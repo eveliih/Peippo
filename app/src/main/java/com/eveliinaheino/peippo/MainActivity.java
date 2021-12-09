@@ -15,15 +15,25 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * MainActivity-luokka jossa tarkastetaan mitä painiketta käyttäjä painaa etusivulta. Avataan sen mukainen aktiviteetti.
+ * @author Eveliina
+ * @author Hanne
+ * @author Katja
+ */
 public class MainActivity extends AppCompatActivity {
-    String json;
-    ArrayList<PeippoVariables> dataArrayList;
+    private String json;
+    private ArrayList<PeippoVariables> dataArrayList;
+
+    /**
+     * Haetaan SharedPreferenceistä tallennetut arvot sisältävä lista. Jos listaa ei ole, luodaan tyhjä lista. Asetetaan lista Singleton-luokan listaksi.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); //pitää olla näin eikä, jotta eri aktiviteetissa tallennettuja tietoja voidaan lukea täällä
+        SharedPreferences prefGet = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         json = prefGet.getString("jsonPeippoVariables", " ");
 
         if(json.equals(" ")){
@@ -33,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             Gson gson = new Gson();
             TypeToken<List<PeippoVariables>> token = new TypeToken<List<PeippoVariables>>() {};
             List<PeippoVariables> dataList = gson.fromJson(json, token.getType());
+
             dataArrayList = new ArrayList<>(dataList.size());
             dataArrayList.addAll(dataList);
         }
@@ -52,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityTipList.class);
         startActivity(intent);
     }
+
+    /**
+     * Tarkastetaan onko käyttäjä tallentanut aikaisempia tietoja ja avataan sen perusteella seuraava aktiviteetti.
+     */
     public void buttonSeeDataClicked(View view){
         File file = new File(
                 "/data/data/com.eveliinaheino.peippo/shared_prefs/com.eveliinaheino.peippo_preferences.xml");
