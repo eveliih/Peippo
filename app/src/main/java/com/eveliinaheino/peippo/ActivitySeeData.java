@@ -24,7 +24,7 @@ import java.util.ArrayList;
 /**
  * Luokka hakee käyttäjän syöttämät tiedot SingletonPeippoVariablesList-luokasta
  * ja tuottaa niistä yhdistelmädiagrammin.
- * @author hanne
+ * @author Hanne
  */
 
 public class ActivitySeeData extends AppCompatActivity {

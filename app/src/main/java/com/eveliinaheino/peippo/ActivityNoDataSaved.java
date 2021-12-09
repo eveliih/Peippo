@@ -7,7 +7,7 @@ import android.widget.TextView;
 /**
  * Luokka avautuu, mikäli käyttäjä yrittää avata diagrammia, ennen kuin on syöttänyt sovellukseen
  * ollenkaan tietoja.
- * @author hanne
+ * @author Hanne
  */
 
 public class ActivityNoDataSaved extends MainActivity {
