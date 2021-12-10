@@ -26,7 +26,6 @@ public class SingletonPeippoVariablesList {
     /**
      * Metodille annetaan parametrina ArrayList, joka halutaan asettaa this.peippoVariablesArrayList:iksi.
      * Käytetään asettamaan SharedPreferenceistä haettu lista Singletonin listaksi.
-     * @param sharedPreferencesArrayList
      */
     public void setArrayListToSingleton(ArrayList sharedPreferencesArrayList){
         this.peippoVariablesArrayList = sharedPreferencesArrayList;
