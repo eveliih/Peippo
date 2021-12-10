@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class SingletonTips {
     private static final SingletonTips ourInstance = new SingletonTips();
-    private ArrayList<String> tipTitles;
+    private ArrayList<TipTitle> tipTitles;
     private ArrayList<String> tipTexts;
 
     public static SingletonTips getInstance() {
@@ -18,13 +18,13 @@ public class SingletonTips {
     private SingletonTips() {
         this.tipTitles = new ArrayList<>();
         this.tipTexts = new ArrayList<>();
-        tipTitles.add("Elämäntavat");
-        tipTitles.add("Nukkumisympäristö");
-        tipTitles.add("Vuoteeseen meno");
-        tipTitles.add("Rentoutus");
-        tipTitles.add("Tietoinen läsnäolo");
-        tipTitles.add("Kognitiiviset menetelmät");
-        tipTitles.add("Liikaunisuus");
+        tipTitles.add(new TipTitle("Elintavat", "Ruokavalio, liikunta ja iltarutiini"));
+        tipTitles.add(new TipTitle("Nukkumisympäristö", "Uneen vaikuttavat nukkumistilan ominaisuudet"));
+        tipTitles.add(new TipTitle("Vuoteeseen meno", "Yhteyden luominen vuoteen ja unen välille"));
+        tipTitles.add(new TipTitle("Rentoutus", "Kehon rauhoittaminen ennen nukahtamista"));
+        tipTitles.add(new TipTitle("Tietoinen läsnäolo", "Salliva suhtautuminen nukahtamiseen liittyviin kokemuksiin"));
+        tipTitles.add(new TipTitle("Kognitiiviset menetelmät", "Tiedonkäsittelyn menetelmiä nukahtamisen avuksi"));
+        tipTitles.add(new TipTitle("Liikaunisuus", "Ongelmana häiritsevän pitkät yöunet tai päiväaikainen torkahtelu"));
         tipTexts.add("Unen saantiin vaikuttavat monet arkiset asiat ja tavat. Ensimmäiseksi on hyvä tarkastaa " +
                 "kofeiinin, nikotiinin ja alkoholin käyttö, ruokavalion laatu ja liikunnan määrä. " +
                 "Sosiaalisista suhteista ja hauskanpidosta huolehtiminen voivat edistää mielen " +
@@ -130,8 +130,18 @@ public class SingletonTips {
                 "Lähde: Terveyskirjasto, Liikaunisuus");
     }
 
-    public ArrayList<String> getTitles() { return this.tipTitles; }
+    public ArrayList<TipTitle> getTitles(){
+        return tipTitles;
+    }
 
-    public ArrayList<String> getTexts() { return this.tipTexts; }
+    public String getTitle(int i) {
+        String title = tipTitles.get(i).getName();
+        return title;
+    }
+
+    public String getTexts(int i) {
+        String text = tipTexts.get(i);
+        return text;
+    }
 }
 
