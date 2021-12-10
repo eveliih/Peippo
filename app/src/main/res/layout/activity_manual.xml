@@ -37,7 +37,7 @@
             android:layout_marginEnd="16dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:text='Tervetuloa käyttämään Peippo-sovellusta! Sovelluksen etusivulla näet neljä painiketta, joiden toiminnallisuudet selitetään seuraavaksi lyhyesti. Toivottavasti saat apua unesi seuraamiseen Peippo-sovelluksesta!\n\nIllalla pääset tallentamaan mielialasi ja virkeystasosi klikkaamalla "Lisää tietoja ennen nukkumista" -painiketta. Valitse sekä mielialalle että virkeydelle yksi arvo väliltä 1-5. Täytä kaikki tiedot ennen tallentamista.\n\nAamulla voit lisätä nukkumasi tunnit, mielialasi sekä virkeystasosi klikkaamalla etusivulla näkyvää "Lisää tietoja heräämisen jälkeen" -painiketta. Nukutut tunnit tulee ilmoittaa kokonaislukuna 0-24 väliltä. Pyöristä itse nukkumasi tunnit lähimpään kokonaislukuun.\n\n"Tarkastele tietojasi" -osiosta näet visuaalisesti esitettynä tallentamasi tiedot. Voit hyödyntää tietoja mielialan, virkeystason ja nukuttujen tuntien seuraamiseen.\n\n"Vinkkejä parempaan uneen" -osiosta löydät paljon hyödyllistä tietoa, jonka avulla voit nukkua entistä paremmin.'
+            android:text="@string/Ohje_teksti"
             android:textColor="#000000"
             android:textSize="16dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
