@@ -10,11 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.gson.Gson;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -94,15 +91,16 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
     public void buttonSavedClicked(View view){
         EditText editTextSleptHours = findViewById(R.id.editTextSleepHours);
         Intent intent = new Intent(this, ActivityFeedbackAfterSleep.class);
+        String stringFromEditText = editTextSleptHours.getText().toString();
 
-        if(tiredness != 0 && mood !=0 && !(editTextSleptHours.getText().toString().isEmpty()) && !(editTextSleptHours.getText().toString().contains(".")) && !(editTextSleptHours.getText().toString().equals("-"))){
+        if(tiredness != 0 && mood !=0 && !(stringFromEditText.isEmpty()) && !(stringFromEditText.contains(".")) && !(stringFromEditText.contains("-"))){
             int sleptHrs = Integer.parseInt(editTextSleptHours.getText().toString());
             Calendar calendar = Calendar.getInstance();
             int day = calendar.get(Calendar.DAY_OF_MONTH);
             int month = calendar.get(Calendar.MONTH);
             month++;
 
-            if(sleptHrs > 24 || sleptHrs < 0){
+            if(sleptHrs > 24 || sleptHrs < 0) {
                 Context context = getApplicationContext();
                 CharSequence text = "Nukutut tunnit 0 - 24 h!";
                 int duration = Toast.LENGTH_SHORT;
@@ -127,7 +125,8 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
 
             startActivity(intent);
             }
-        } else if(editTextSleptHours.getText().toString().contains(".") || editTextSleptHours.getText().toString().contains("-")){
+        }
+        else if(stringFromEditText.contains("-") || stringFromEditText.contains(".")){
             Context context = getApplicationContext();
             CharSequence text = "Käytä pelkkiä numeroita!";
             int duration = Toast.LENGTH_SHORT;
@@ -135,7 +134,7 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
-        else{
+        else {
             Context context = getApplicationContext();
             CharSequence text = "Täytä kaikki kohdat ennen tallentamista!";
             int duration = Toast.LENGTH_SHORT;
