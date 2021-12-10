@@ -105,7 +105,7 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineImageLeft"
         app:layout_constraintTop_toBottomOf="@+id/guidelineImageTop"
         app:layout_constraintVertical_bias="0.428"
-        app:srcCompat="@drawable/pngtreebird_cartoon_character_on_white_4048164" />
+        app:srcCompat="@drawable/main_bird_picture" />
 
     <ImageView
         android:id="@+id/logoView"

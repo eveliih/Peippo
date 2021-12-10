@@ -32,6 +32,22 @@
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_tip_details.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_tip_list.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout/popup_window.xml" value="0.16" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/drawable/pop_up_background.xml" value="0.2140625" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_add_data_after_sleep.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_add_data_before_sleep.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_feedback_after_sleep.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_feedback_before_sleep.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_no_data_saved.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_tip_list.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_add_data_after_sleep.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_add_data_before_sleep.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_feedback_after_sleep.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_feedback_before_sleep.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_main.xml" value="0.13055555555555556" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_manual.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_no_data_saved.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_see_data.xml" value="0.19791666666666666" />
       </map>
     </option>
   </component>
