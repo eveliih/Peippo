@@ -14,23 +14,18 @@ import java.util.ArrayList;
  */
 
 public class ActivityTipDetails extends AppCompatActivity {
-    private ArrayList<String> titles;
-    private ArrayList<String> texts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip_details);
 
-        titles = SingletonTips.getInstance().getTitles();
-        texts = SingletonTips.getInstance().getTexts();
-
         Bundle b = getIntent().getExtras();
         int i = b.getInt(ActivityTipList.EXTRATIPS, 0);
 
         ((TextView)findViewById(R.id.textViewTitle))
-                .setText(titles.get(i));
+                .setText(SingletonTips.getInstance().getTitle(i));
         ((TextView)findViewById(R.id.textViewTip))
-                .setText(texts.get(i));
+                .setText(SingletonTips.getInstance().getTexts(i));
     }
 }

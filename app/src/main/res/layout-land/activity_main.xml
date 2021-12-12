@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- @author Eveliina
+     @author Katja
+     @author Hanne -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,7 +17,7 @@
         android:layout_marginEnd="35dp"
         android:backgroundTint="#B8594D"
         android:onClick="buttonAddBeforeSleepClicked"
-        android:text="Lisää tietoja ennen nukkumista"
+        android:text="@string/lisaa_tietoja_ennen_nukkumista"
         app:layout_constraintBottom_toTopOf="@+id/buttonAddAfterSleep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -27,7 +30,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#B8594D"
         android:onClick="buttonAddAfterSleepClicked"
-        android:text="Lisää tietoja heräämisen jälkeen"
+        android:text="@string/lisaa_tietoja_heraamisen_jalkeen"
         app:layout_constraintBottom_toTopOf="@+id/buttonSeeData"
         app:layout_constraintEnd_toEndOf="@+id/buttonAddBeforeSleep"
         app:layout_constraintStart_toStartOf="@+id/buttonAddBeforeSleep"
@@ -40,7 +43,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#B8594D"
         android:onClick="buttonSeeDataClicked"
-        android:text="Tarkastele tietojasi"
+        android:text="@string/tarkastele_tietojasi"
         app:layout_constraintBottom_toTopOf="@+id/buttonTips"
         app:layout_constraintEnd_toEndOf="@+id/buttonTips"
         app:layout_constraintStart_toStartOf="@+id/buttonTips"
@@ -54,7 +57,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="#B8594D"
         android:onClick="buttonSeeTipsClicked"
-        android:text="Vinkkejä parempaan uneen"
+        android:text="@string/vinkkeja_parempaan_uneen"
         app:layout_constraintBottom_toTopOf="@+id/buttonManual"
         app:layout_constraintEnd_toEndOf="@+id/buttonAddAfterSleep"
         app:layout_constraintStart_toStartOf="@+id/buttonAddAfterSleep"
@@ -106,6 +109,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/buttonAddBeforeSleep"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/pngtreebird_cartoon_character_on_white_4048164" />
+        app:srcCompat="@drawable/main_bird_picture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

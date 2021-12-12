@@ -92,7 +92,7 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityFeedbackAfterSleep.class);
         String stringFromEditText = editTextSleptHours.getText().toString();
 
-        if(tiredness != 0 && mood !=0 && !(stringFromEditText.isEmpty()) && !(stringFromEditText.contains(".")) && !(stringFromEditText.contains("-"))){
+        if(tiredness != 0 && mood !=0 && !(stringFromEditText.isEmpty()) && !(stringFromEditText.contains(".")) && !(stringFromEditText.contains("-")) && !(stringFromEditText.contains(","))){
             int sleptHrs = Integer.parseInt(editTextSleptHours.getText().toString());
             Calendar calendar = Calendar.getInstance();
             int day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -125,7 +125,7 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
             startActivity(intent);
             }
         }
-        else if(stringFromEditText.contains("-") || stringFromEditText.contains(".")){
+        else if(stringFromEditText.contains("-") || stringFromEditText.contains(".") || !stringFromEditText.contains(",")){
             Context context = getApplicationContext();
             CharSequence text = "Käytä pelkkiä numeroita!";
             int duration = Toast.LENGTH_SHORT;
