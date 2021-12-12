@@ -40,7 +40,7 @@ public class GetFeedbackMessage {
         if(this.mood == 1 || this.mood == 2){
             return "Arvioit mielialasi olevan huono. Huonosti nukuttu yö voi vaikuttaa myös mielialaan. Jokaiselle sattuu myös huonompia päiviä toisinaan. Jos mielialasi jatkuu huonona pitkään yhtäjaksoisesti, hakeudu terveydenhuollon ammattilaisen vastaanotolle. Voit seurata mielialaasi \"Tarkastele tietoja\" -osion avulla.";
         }else if(this.mood == 3){
-            return "Arvioit mielialasi olevan neutraali. \"Tarkastele tietojasi\" -osiosta voita tarkastella mielialaasi pidemmällä aikavälillä. Tapahtuiko mielialassasi muutosta yön aikana?";
+            return "Arvioit mielialasi olevan neutraali. \"Tarkastele tietojasi\" -osiosta voit tarkastella mielialaasi pidemmällä aikavälillä. Tapahtuiko mielialassasi muutosta yön aikana?";
         }else if(this.mood == 4 || this.mood == 5){
             return "Arvioit mielialasi olevan hyvä. Oletko havainnut yhteyttä hyvin nukutun yön ja hyvän mielialan välillä?";
         }return "Virhe. Yritä tallentaa tiedot uudelleen.";
