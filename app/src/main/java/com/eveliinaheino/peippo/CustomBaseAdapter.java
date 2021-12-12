@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class CustomBaseAdapter extends BaseAdapter {
     private class ViewHolder {
         TextView title;
         TextView description;
+        ImageView picture;
     }
 
     @Override
@@ -42,6 +44,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
             holder.title = (TextView) convertView.findViewById(R.id.tipTitle);
             holder.description = (TextView) convertView.findViewById((R.id.tipDescription));
+            holder.picture = (ImageView) convertView.findViewById(R.id.tipPicture);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -51,6 +54,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
         holder.title.setText(tipTitle.getName());
         holder.description.setText(tipTitle.getDescription());
+        holder.picture.setImageResource(tipTitle.getPicture());
 
         return convertView;
     }

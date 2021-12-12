@@ -3,8 +3,8 @@ package com.eveliinaheino.peippo;
 import java.util.ArrayList;
 
 /**
- * Singleton-luokka, joka sisältää ListView:ssa ja TipDetails-activityssa tarvittavat tekstitiedot.
- * @author Katja
+ * Singleton-luokka, joka sisältää ListView:ssa ja TipDetails-activityssa tarvittavat tiedot.
+ * @Author Katja
  */
 public class SingletonTips {
     private static final SingletonTips ourInstance = new SingletonTips();
@@ -18,13 +18,13 @@ public class SingletonTips {
     private SingletonTips() {
         this.tipTitles = new ArrayList<>();
         this.tipTexts = new ArrayList<>();
-        tipTitles.add(new TipTitle("Elintavat", "Ruokavalio, liikunta ja iltarutiini"));
-        tipTitles.add(new TipTitle("Nukkumisympäristö", "Uneen vaikuttavat nukkumistilan ominaisuudet"));
-        tipTitles.add(new TipTitle("Vuoteeseen meno", "Yhteyden luominen vuoteen ja unen välille"));
-        tipTitles.add(new TipTitle("Rentoutus", "Kehon rauhoittaminen ennen nukahtamista"));
-        tipTitles.add(new TipTitle("Tietoinen läsnäolo", "Salliva suhtautuminen nukahtamiseen liittyviin kokemuksiin"));
-        tipTitles.add(new TipTitle("Kognitiiviset menetelmät", "Tiedonkäsittelyn menetelmiä nukahtamisen avuksi"));
-        tipTitles.add(new TipTitle("Liikaunisuus", "Ongelmana häiritsevän pitkät yöunet tai päiväaikainen torkahtelu"));
+        tipTitles.add(new TipTitle("Elämäntavat", "Ruokavalio, liikunta ja iltarutiini", R.drawable.lahikuva_lintu));
+        tipTitles.add(new TipTitle("Nukkumisympäristö", "Uneen vaikuttavat nukkumistilan ominaisuudet", R.drawable.yksi_lintu_toiseen_suuntaan));
+        tipTitles.add(new TipTitle("Vuoteeseen meno", "Yhteyden luominen vuoteen ja unen välille", R.drawable.lahikuva_toinen_lintu));
+        tipTitles.add(new TipTitle("Rentoutus", "Kehon rauhoittaminen ennen nukahtamista", R.drawable.kukka));
+        tipTitles.add(new TipTitle("Tietoinen läsnäolo", "Salliva suhtautuminen nukahtamiseen liittyviin kokemuksiin", R.drawable.lahikuva_lintu_toiseen_suuntaan));
+        tipTitles.add(new TipTitle("Kognitiiviset menetelmät", "Tiedonkäsittelyn menetelmiä nukahtamisen avuksi", R.drawable.yksi_lintu));
+        tipTitles.add(new TipTitle("Liikaunisuus", "Ongelmana häiritsevän pitkät yöunet tai päiväaikainen torkahtelu", R.drawable.lahikuva_toinen_lintu_toiseen_suuntaan));
         tipTexts.add("Unen saantiin vaikuttavat monet arkiset asiat ja tavat. Ensimmäiseksi on hyvä tarkastaa " +
                 "kofeiinin, nikotiinin ja alkoholin käyttö, ruokavalion laatu ja liikunnan määrä. " +
                 "Sosiaalisista suhteista ja hauskanpidosta huolehtiminen voivat edistää mielen " +
