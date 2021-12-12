@@ -1,11 +1,9 @@
 package com.eveliinaheino.peippo;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 
 /**
  * Aktiviteetti-luokka, joka näyttää SingletonTips-luokan sisältämiä tekstejä

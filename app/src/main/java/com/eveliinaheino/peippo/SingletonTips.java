@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Singleton-luokka, joka sisältää ListView:ssa ja TipDetails-activityssa tarvittavat tiedot.
- * @Author Katja
+ * @author Katja
  */
 public class SingletonTips {
     private static final SingletonTips ourInstance = new SingletonTips();
