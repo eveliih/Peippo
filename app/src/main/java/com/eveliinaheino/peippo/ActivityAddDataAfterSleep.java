@@ -125,7 +125,7 @@ public class ActivityAddDataAfterSleep extends AppCompatActivity {
             startActivity(intent);
             }
         }
-        else if(stringFromEditText.contains("-") || stringFromEditText.contains(".") || !stringFromEditText.contains(",")){
+        else if(stringFromEditText.contains("-") || stringFromEditText.contains(".") || stringFromEditText.contains(",")){
             Context context = getApplicationContext();
             CharSequence text = "Käytä pelkkiä numeroita!";
             int duration = Toast.LENGTH_SHORT;
