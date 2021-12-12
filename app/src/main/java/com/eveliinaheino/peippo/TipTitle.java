@@ -7,10 +7,12 @@ package com.eveliinaheino.peippo;
 public class TipTitle {
     private String name;
     private String description;
+    private Integer picture;
 
-    public TipTitle(String name, String description) {
+    public TipTitle(String name, String description, Integer picture) {
         this.name = name;
         this.description = description;
+        this.picture = picture;
     }
 
     @Override
@@ -18,11 +20,11 @@ public class TipTitle {
         return name;
     }
 
-    public String getName() {
-        return this.name;
-    }
+    public String getName() { return this.name; }
 
     public String getDescription(){
         return this.description;
     }
+
+    public Integer getPicture() { return this.picture; }
 }
