@@ -3,24 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_add_data_after_sleep.xml" value="0.30070546737213405" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_add_data_before_sleep.xml" value="0.30070546737213405" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_feedback_after_sleep.xml" value="0.30070546737213405" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_feedback_before_sleep.xml" value="0.3002645502645503" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_main.xml" value="0.2208994708994709" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_no_data_saved.xml" value="0.30070546737213405" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_tip_details.xml" value="0.30070546737213405" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_tip_list.xml" value="0.30070546737213405" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_add_data_after_sleep.xml" value="0.26721014492753625" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_add_data_before_sleep.xml" value="0.35520833333333335" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_feedback_after_sleep.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_manual.xml" value="0.3546875" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_no_data_saved.xml" value="0.3546875" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_see_data.xml" value="0.26721014492753625" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_tip_details.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_tip_list.xml" value="0.26721014492753625" />
-        <entry key="..\:/Users/eveli/AndroidStudioProjects/Peippo/app/src/main/res/layout/layout_tip_list.xml" value="0.26721014492753625" />
+        <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20625" />
+        <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/drawable/pop_up_background.xml" value="0.20625" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_add_data_after_sleep.xml" value="0.1921875" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_add_data_before_sleep.xml" value="0.1921875" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_feedback_after_sleep.xml" value="0.1921875" />
@@ -43,6 +27,7 @@
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_see_data.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_tip_details.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_tip_list.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout/layout_tip_list.xml" value="0.19270833333333334" />
         <entry key="..\:/Users/hanne/AndroidStudioProjects/Peippo/app/src/main/res/layout/popup_window.xml" value="0.16" />
         <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout-land/activity_tip_details.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/ka-za/AndroidStudioProjects/Peippo/app/src/main/res/layout/activity_tip_details.xml" value="0.2" />
